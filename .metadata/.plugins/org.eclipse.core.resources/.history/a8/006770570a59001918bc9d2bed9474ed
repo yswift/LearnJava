@@ -1,0 +1,30 @@
+package c02;
+
+public class GuessGame {
+	Player p1;
+	
+	public void startGame() {
+		// 鍒涘缓鐜╁
+		p1 = new Player();
+		
+		// 鐢熸垚璋滃簳鏁�
+		int target = (int)(Math.random()*10);
+		System.out.println("target is " + target);
+		
+		// 寰幆
+		while (true) {
+			// 鐜╁鐚�
+			p1.guess();
+			System.out.println("鐜╁鐚� " + p1.number);
+			
+			// 妫�鏌ョ帺瀹剁寽娴嬫槸鍚︽纭�
+			if (target == p1.number) {
+				System.out.println("鐚滀腑");
+				break;
+			} else {
+				System.out.println("娌＄寽涓�");
+			}
+		}
+	}
+
+}
