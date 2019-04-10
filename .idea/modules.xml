@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Advanced/Advanced.iml" filepath="$PROJECT_DIR$/Advanced/Advanced.iml" />
       <module fileurl="file://$PROJECT_DIR$/Advanced/Basic.iml" filepath="$PROJECT_DIR$/Advanced/Basic.iml" />
+      <module fileurl="file://$PROJECT_DIR$/JavaWeb/JavaWeb.iml" filepath="$PROJECT_DIR$/JavaWeb/JavaWeb.iml" />
     </modules>
   </component>
 </project>
