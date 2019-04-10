@@ -1,0 +1,32 @@
+package db.springdata;
+
+import java.util.List;
+
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+import db.model.Department;
+
+public class TestDep {
+    ApplicationContext ctx ;
+    DepartmentRepository repository;
+    
+    void init() {
+        // 加载spring的配置文件
+        ctx = new ClassPathXmlApplicationContext("spring-data-jpa.xml");
+//        ctx = new ClassPathXmlApplicationContext();
+        repository = ctx.getBean(DepartmentRepository.class);
+    }
+    
+    void listAll() {
+    	List<Department> deps = repository.findAll();
+    	System.out.println(deps);
+    }
+    
+    public static void main(String[] args) {
+    	TestDep t = new TestDep();
+    	t.init();
+    	t.listAll();
+    	t.listAll();
+	}
+}
