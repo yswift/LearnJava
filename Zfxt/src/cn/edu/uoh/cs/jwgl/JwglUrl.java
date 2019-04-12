@@ -7,7 +7,7 @@ public interface JwglUrl {
 	public static final String SECRET_CODE_URL = HOST + "CheckCode.aspx";
 	// 教务系统登录页
 	public static final String LOGIN_URL = HOST + "Default2.aspx";
-	// 教务系统主页，菜单页面
+	// 教务系统主页，菜单页面, todo 学生的不一样
 	public static final String MAIN_URL = HOST + "js_main.aspx?xh=";
 	
 	public static final String Gnmkdm = "&gnmkdm=N122304";

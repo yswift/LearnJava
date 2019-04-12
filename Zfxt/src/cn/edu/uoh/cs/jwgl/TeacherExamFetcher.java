@@ -13,19 +13,20 @@ import org.jsoup.select.Elements;
 
 import cn.edu.uoh.cs.ws.Exam;
 
-public class TeacherExamFetcher {
-	private Account account;
+public class TeacherExamFetcher extends ExamFetcher {
 	private ArrayList<Exam> exams = new ArrayList<>();
 
-	public TeacherExamFetcher(Account account) {
-		this.account = account;
+	public TeacherExamFetcher(String userId, String userName, String cookie) {
+		super(userId, userName, cookie);
 	}
-	
+
 	public ArrayList<Exam> fetch() throws IOException {
-		String url = JwglUrl.HOST + "js_ksap.aspx?zgh=" + account.userId + "&xm=" + account.userName + JwglUrl.Gnmkdm;
+		String url = JwglUrl.HOST + "js_ksap.aspx?zgh=" + userId + "&xm=" + userName + JwglUrl.Gnmkdm;
 		System.out.println("监考安排:" + url);
 
-		String html = HttpHelper.getHtml(url, account.cookie, account.mainUrl, JwglUrl.Encoding);
+		// 上级url
+		String mainUrl = JwglUrl.HOST + "js_main.aspx?xh=" + userId;
+		String html = HttpHelper.getHtml(url, cookie, mainUrl, JwglUrl.Encoding);
 
 		Document doc = Jsoup.parse(html);
 		Elements rows = doc.select("#Datagrid1 tbody").get(0).children();
