@@ -1,0 +1,9 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="Zfxt:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/Zfxt_jar</output-path>
+    <root id="archive" name="Zfxt.jar">
+      <element id="module-output" name="Zfxt" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/Zfxt/libs/jsoup-1.11.3.jar" path-in-jar="/" />
+    </root>
+  </artifact>
+</component>
