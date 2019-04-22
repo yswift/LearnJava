@@ -7,8 +7,10 @@ import java.sql.SQLException;
 public class DbHelper {
 	public static final String connectionUrl = "jdbc:sqlserver://localhost:1433;databaseName=LearnJava;user=LearnJava;password=LearnJavaPwd";
 //	public static final String connectionUrl = "jdbc:sqlserver://10.2.7.39:1433;databaseName=LearnJava;user=LearnJava;password=LearnJavaPwd";
-	
+	public static final String mySqlConUrl = "jdbc:mysql://localhost:3306/LearnJava?serverTimezone=UTC";
+
 	Connection connection;
+	Connection mySqlCon;
 	
 	public void connect() throws SQLException {
 		if (connection == null || connection.isClosed()) {
@@ -29,6 +31,13 @@ public class DbHelper {
 			connect();
 		}
 		return connection;
+	}
+
+	public Connection getMysqlConnection() throws SQLException {
+		if (mySqlCon == null || mySqlCon.isClosed()) {
+			mySqlCon = DriverManager.getConnection(mySqlConUrl, "learnjavauser", "learnjavapwd");
+		}
+		return mySqlCon;
 	}
 
 }
