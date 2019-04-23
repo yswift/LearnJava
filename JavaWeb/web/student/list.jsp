@@ -60,7 +60,7 @@
                 &nbsp;
                 <a href="edit.jsp?id=<%= s.getId()%>" >编辑</a>
                 &nbsp;
-                <a href="/student/del?id=<%= s.getId()%>" >删除</a>
+                <a href="/student/delete?id=<%= s.getId()%>" >删除</a>
             </td>
         </tr>
         <% } %>

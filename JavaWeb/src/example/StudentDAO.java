@@ -73,4 +73,30 @@ public class StudentDAO {
 			pstmt.execute();
 		}
 	}
+
+	public void update(Student s) throws SQLException {
+		String sql = "update Student set No=?, Name=?, Age=?, Birthday=?, photo=? where id=?";
+		try (PreparedStatement pstmt = dbHelper.getMysqlConnection().prepareStatement(sql)) {
+			pstmt.setString(1, s.getNo());
+			pstmt.setString(2, s.getName());
+			pstmt.setInt(3, s.getAge());
+			pstmt.setDate(4, s.getBirthday());
+			pstmt.setBlob(5, s.getPhoto());
+			pstmt.setInt(6, s.getId());
+			pstmt.execute();
+		}
+	}
+
+	public void delete(String id) throws SQLException {
+		int iid = Integer.parseInt(id);
+		delete(iid);
+	}
+
+	public void delete(int id) throws SQLException {
+		String sql = "delete from Student where id=?";
+		try (PreparedStatement pstmt = dbHelper.getMysqlConnection().prepareStatement(sql) ) {
+			pstmt.setInt(1, id);
+			pstmt.execute();
+		}
+	}
 }

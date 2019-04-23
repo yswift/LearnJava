@@ -49,12 +49,6 @@ public class DbHelper {
         return mySqlCon;
     }
 
-    public static void copy(InputStream is, OutputStream os) throws IOException {
-        int rlen;
-        byte[] buffer = new byte[1024];
-        while ((rlen = is.read(buffer)) != -1) {
-            os.write(buffer, 0, rlen);
-        }
-    }
+
 }
 

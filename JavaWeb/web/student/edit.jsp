@@ -1,4 +1,5 @@
-<%--
+<%@ page import="example.StudentDAO" %>
+<%@ page import="example.Student" %><%--
   Created by IntelliJ IDEA.
   User: yswif
   Date: 2019-4-22
@@ -9,7 +10,7 @@
          pageEncoding="UTF-8"%>
 <html>
 <head>
-    <title>新建学生</title>
+    <title>编辑学生信息</title>
     <%--包括html头信息，主要是css和js文件--%>
     <jsp:include page="../share/header.html" />
 </head>
@@ -19,31 +20,44 @@
 <br />
 <%--学生信息表单--%>
 <div class="container">
-
+<%
+    StudentDAO dao = new StudentDAO();
+    String id = request.getParameter("id");
+    Student s = dao.findById(id);
+    if (s == null) {
+        response.sendError(404, "指定的学生未找到, id=" + id);
+    }
+%>
     <h3>添加学生</h3>
-    <form action="/student/create" method="post" enctype="multipart/form-data">
+    <form action="/student/edit" method="post" enctype="multipart/form-data">
+        <div class="form-group row">
+            <label for="Id" class="col-md-2 col-form-label">学号</label>
+            <div class="col-md-10">
+                <input type="text" readonly class="form-control" id="Id" name="Id" value="<%= s.getId() %>">
+            </div>
+        </div>
         <div class="form-group row">
             <label for="No" class="col-md-2 col-form-label">学号</label>
             <div class="col-md-10">
-                <input type="text" class="form-control" id="No" name="No" placeholder="12个字符">
+                <input type="text" class="form-control" id="No" name="No" placeholder="12个字符"  value="<%= s.getNo() %>">
             </div>
         </div>
         <div class="form-group row">
             <label for="Name" class="col-md-2 col-form-label">姓名</label>
             <div class="col-md-10">
-                <input type="text" class="form-control" id="Name" name="Name" placeholder="姓名">
+                <input type="text" class="form-control" id="Name" name="Name" placeholder="姓名"  value="<%= s.getName() %>">
             </div>
         </div>
         <div class="form-group row">
             <label for="Age" class="col-md-2 col-form-label">年龄</label>
             <div class="col-md-10">
-                <input type="number" class="form-control" id="Age" name="Age" >
+                <input type="number" class="form-control" id="Age" name="Age"  value="<%= s.getAge() %>">
             </div>
         </div>
         <div class="form-group row">
             <label for="Birthday" class="col-md-2 col-form-label">出生日期</label>
             <div class="col-md-10">
-                <input type="Date" class="form-control" id="Birthday" name="Birthday" >
+                <input type="Date" class="form-control" id="Birthday" name="Birthday"  value="<%= s.getBirthday() %>">
             </div>
         </div>
         <div class="form-group row">

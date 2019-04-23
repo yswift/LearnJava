@@ -29,7 +29,7 @@
     <h3>学生信息</h3>
     <div class="row">
         <div class="col-4">
-            <img src="/student/photo?id=<%=id%>" />
+            <img style="max-width: 100%;" src="/student/photo?id=<%=id%>" />
         </div>
         <div class="col-8">
             <ul>
