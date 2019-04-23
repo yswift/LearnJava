@@ -13,6 +13,7 @@
     </servlet-mapping>
 
 <jsp-config>
+    <!--解决普通html文件内容乱码问题，html文件也使用utf8编码-->
     <jsp-property-group>
         <description>html encoding</description>
         <display-name>JSPConfiguration</display-name>

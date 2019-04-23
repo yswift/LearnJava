@@ -8,9 +8,16 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
   <head>
-    <title>$Title$</title>
+    <title>Home</title>
+    <jsp:include page="share/header.html" />
   </head>
   <body>
-  $END$
+  <%--显示导航条--%>
+  <jsp:include page="share/nav.html" />
+  <br />
+
+  <div class="container">
+    <h3>JSP 简单案例</h3>
+  </div>
   </body>
 </html>

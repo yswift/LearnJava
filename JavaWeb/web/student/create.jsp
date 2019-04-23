@@ -10,13 +10,18 @@
 <html>
 <head>
     <title>Title</title>
+    <%--包括html头信息，主要是css和js文件--%>
     <jsp:include page="../share/header.html" />
 </head>
 <body>
+<%--显示导航条--%>
 <jsp:include page="../share/nav.html" />
-
+<br />
+<%--学生信息表单--%>
 <div class="container">
-    <form action="/createStudent" method="post">
+
+    <h3>添加学生</h3>
+    <form action="/student/add" method="post" enctype="multipart/form-data">
         <div class="form-group row">
             <label for="No" class="col-md-2 col-form-label">学号</label>
             <div class="col-md-10">
@@ -39,6 +44,12 @@
             <label for="Birthday" class="col-md-2 col-form-label">出生日期</label>
             <div class="col-md-10">
                 <input type="Date" class="form-control" id="Birthday" name="Birthday" >
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="Photo" class="col-md-2 col-form-label">照片</label>
+            <div class="col-md-10">
+                <input type="file" class="form-control" id="Photo" name="Photo" >
             </div>
         </div>
         <div class="form-group row">
