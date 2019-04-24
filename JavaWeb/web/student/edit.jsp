@@ -29,13 +29,13 @@
     }
 %>
     <h3>编辑学生信息</h3>
-    <form action="/student/edit" method="post" enctype="multipart/form-data">
-        <div class="form-group row">
-            <label for="Id" class="col-md-2 col-form-label">学号</label>
-            <div class="col-md-10">
-                <input type="text" readonly class="form-control" id="Id" name="Id" value="<%= s.getId() %>">
-            </div>
+<form action="/student/edit" method="post" enctype="multipart/form-data">
+    <div class="form-group row">
+        <label for="Id" class="col-md-2 col-form-label">Id</label>
+        <div class="col-md-10">
+            <input type="text" readonly class="form-control" id="Id" name="Id" value="<%= s.getId() %>">
         </div>
+    </div>
         <div class="form-group row">
             <label for="No" class="col-md-2 col-form-label">学号</label>
             <div class="col-md-10">

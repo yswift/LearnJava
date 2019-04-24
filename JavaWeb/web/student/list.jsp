@@ -40,7 +40,7 @@
             <th scope="col">姓名</th>
             <th scope="col">年龄</th>
             <th scope="col">出生日期</th>
-            <th scope="col"></th>
+            <th scope="col"><a href="create.jsp" >新建</a></th>
         </tr>
         </thead>
         <tbody>

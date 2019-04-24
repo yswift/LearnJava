@@ -21,43 +21,43 @@
 <div class="container">
 
     <h3>添加学生</h3>
-    <form action="/student/create" method="post" enctype="multipart/form-data">
-        <div class="form-group row">
-            <label for="No" class="col-md-2 col-form-label">学号</label>
-            <div class="col-md-10">
-                <input type="text" class="form-control" id="No" name="No" placeholder="12个字符">
-            </div>
+<form action="/student/create" method="post" enctype="multipart/form-data">
+    <div class="form-group row">
+        <label for="No" class="col-md-2 col-form-label">学号</label>
+        <div class="col-md-10">
+            <input type="text" class="form-control" id="No" name="No" placeholder="12个字符">
         </div>
-        <div class="form-group row">
-            <label for="Name" class="col-md-2 col-form-label">姓名</label>
-            <div class="col-md-10">
-                <input type="text" class="form-control" id="Name" name="Name" placeholder="姓名">
-            </div>
+    </div>
+    <div class="form-group row">
+        <label for="Name" class="col-md-2 col-form-label">姓名</label>
+        <div class="col-md-10">
+            <input type="text" class="form-control" id="Name" name="Name" placeholder="姓名">
         </div>
-        <div class="form-group row">
-            <label for="Age" class="col-md-2 col-form-label">年龄</label>
-            <div class="col-md-10">
-                <input type="number" class="form-control" id="Age" name="Age" >
-            </div>
+    </div>
+    <div class="form-group row">
+        <label for="Age" class="col-md-2 col-form-label">年龄</label>
+        <div class="col-md-10">
+            <input type="number" class="form-control" id="Age" name="Age" >
         </div>
-        <div class="form-group row">
-            <label for="Birthday" class="col-md-2 col-form-label">出生日期</label>
-            <div class="col-md-10">
-                <input type="Date" class="form-control" id="Birthday" name="Birthday" >
-            </div>
+    </div>
+    <div class="form-group row">
+        <label for="Birthday" class="col-md-2 col-form-label">出生日期</label>
+        <div class="col-md-10">
+            <input type="Date" class="form-control" id="Birthday" name="Birthday" >
         </div>
-        <div class="form-group row">
-            <label for="Photo" class="col-md-2 col-form-label">照片</label>
-            <div class="col-md-10">
-                <input type="file" class="form-control" id="Photo" name="Photo" >
-            </div>
+    </div>
+    <div class="form-group row">
+        <label for="Photo" class="col-md-2 col-form-label">照片</label>
+        <div class="col-md-10">
+            <input type="file" class="form-control" id="Photo" name="Photo" >
         </div>
-        <div class="form-group row">
-            <div class="col-md-10 offset-md-2">
-                <input type="submit" class="btn btn-success" value="保存" >
-            </div>
+    </div>
+    <div class="form-group row">
+        <div class="col-md-10 offset-md-2">
+            <input type="submit" class="btn btn-success" value="保存" >
         </div>
-    </form>
+    </div>
+</form>
 </div>
 
 </body>

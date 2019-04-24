@@ -20,18 +20,17 @@ import java.text.SimpleDateFormat;
 @WebServlet(name = "StudentServlet", urlPatterns = {"/student/create", "/student/edit", "/student/photo", "/student/delete"})
 // 允许上传文件，最大1M，
 @MultipartConfig(
-        fileSizeThreshold = 1024*1024, // 小于1m的文件保存在内存中
-        maxRequestSize = 1024*1024
+        fileSizeThreshold = 1024 * 1024, // 小于1m的文件保存在内存中
+        maxRequestSize = 1024 * 1024
 )
 public class StudentServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-//        request.setCharacterEncoding("utf-8");
         String path = request.getServletPath();
         switch (path) {
-            case "/student/create" :
+            case "/student/create":
                 create(request, response);
                 break;
-            case "/student/edit" :
+            case "/student/edit":
                 edit(request, response);
                 break;
             default:
@@ -43,10 +42,10 @@ public class StudentServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String path = request.getServletPath();
         switch (path) {
-            case "/student/delete" :
+            case "/student/delete":
                 delete(request, response);
                 break;
-            case "/student/photo" :
+            case "/student/photo":
                 getPhoto(request, response);
                 break;
             default:
@@ -144,7 +143,7 @@ public class StudentServlet extends HttpServlet {
         String id = request.getParameter("id");
         StudentDAO dao = new StudentDAO();
         try {
-            Student s= dao.findById(id);
+            Student s = dao.findById(id);
             if (s == null || s.getPhoto() == null) {
                 response.sendError(404, "cannot found student by id:" + id);
             }
