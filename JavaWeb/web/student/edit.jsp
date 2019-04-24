@@ -28,7 +28,7 @@
         response.sendError(404, "指定的学生未找到, id=" + id);
     }
 %>
-    <h3>添加学生</h3>
+    <h3>编辑学生信息</h3>
     <form action="/student/edit" method="post" enctype="multipart/form-data">
         <div class="form-group row">
             <label for="Id" class="col-md-2 col-form-label">学号</label>
@@ -39,19 +39,25 @@
         <div class="form-group row">
             <label for="No" class="col-md-2 col-form-label">学号</label>
             <div class="col-md-10">
-                <input type="text" class="form-control" id="No" name="No" placeholder="12个字符"  value="<%= s.getNo() %>">
+                <input type="text" class="form-control" id="No" name="No" placeholder="12个字符"
+                       pattern="^20\d{10}$" required
+                       value="<%= s.getNo() %>">
             </div>
         </div>
         <div class="form-group row">
             <label for="Name" class="col-md-2 col-form-label">姓名</label>
             <div class="col-md-10">
-                <input type="text" class="form-control" id="Name" name="Name" placeholder="姓名"  value="<%= s.getName() %>">
+                <input type="text" class="form-control" id="Name" name="Name" placeholder="姓名"
+                       required pattern=".{2,}"
+                       value="<%= s.getName() %>">
             </div>
         </div>
         <div class="form-group row">
             <label for="Age" class="col-md-2 col-form-label">年龄</label>
             <div class="col-md-10">
-                <input type="number" class="form-control" id="Age" name="Age"  value="<%= s.getAge() %>">
+                <input type="number" class="form-control" id="Age" name="Age"
+                       required min="1" max="100"
+                       value="<%= s.getAge() %>">
             </div>
         </div>
         <div class="form-group row">

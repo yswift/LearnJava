@@ -25,6 +25,7 @@ import java.text.SimpleDateFormat;
 )
 public class StudentServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+//        request.setCharacterEncoding("utf-8");
         String path = request.getServletPath();
         switch (path) {
             case "/student/create" :
@@ -54,6 +55,7 @@ public class StudentServlet extends HttpServlet {
         }
     }
 
+    // 新建学生
     private void create(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
         try {
             Student s = new Student();
@@ -71,6 +73,7 @@ public class StudentServlet extends HttpServlet {
         }
     }
 
+    // 使用客户端提交的信息更新student对象
     private void updateStudent(Student s, HttpServletRequest request) throws ServletException, SQLException, IOException {
         s.setNo(request.getParameter("No"));
         s.setName(request.getParameter("Name"));
@@ -90,6 +93,7 @@ public class StudentServlet extends HttpServlet {
         uploadPhoto(s, request);
     }
 
+    // 处理照片上传
     private void uploadPhoto(Student s, HttpServletRequest request) throws IOException, ServletException, SQLException {
         Part filePart = request.getPart("Photo");
         if (filePart == null || filePart.getSize() <= 0) {
@@ -144,7 +148,9 @@ public class StudentServlet extends HttpServlet {
             if (s == null || s.getPhoto() == null) {
                 response.sendError(404, "cannot found student by id:" + id);
             }
+            // 设置结果MIME
             response.setContentType("image/jpg");
+            // 照片直接写入输出流
             OutputStream os = response.getOutputStream();
             Blob photo = s.getPhoto();
             InputStream is = photo.getBinaryStream();
@@ -155,6 +161,7 @@ public class StudentServlet extends HttpServlet {
         }
     }
 
+    // 把数据从输入流is，复制到输出流os中
     public static void copy(InputStream is, OutputStream os) throws IOException {
         int rlen;
         byte[] buffer = new byte[1024];
