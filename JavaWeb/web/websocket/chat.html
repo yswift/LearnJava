@@ -1,0 +1,210 @@
+﻿<html>
+<head>
+    <!--<meta charset="utf-8"/>-->
+    <!--<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>-->
+    <!--<meta name="description" content=""/>-->
+    <!--<meta name="author" content=""/>-->
+    <!--&lt;!&ndash;[if IE]>-->
+    <!--<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">-->
+    <!--<![endif]&ndash;&gt;-->
+    <title>BOOTSTRAP CHAT EXAMPLE</title>
+    <!-- BOOTSTRAP CORE STYLE CSS -->
+    <link rel="stylesheet" href="bootstrap.css">
+
+</head>
+<body>
+<div class="container">
+    <div class="row " style="padding-top:40px;">
+        <h3 class="text-center">websocket demo</h3>
+        <br/><br/>
+        <div class="col-md-8">
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                    聊天内容
+                </div>
+                <div id="chat" class="panel-body" style="height: 500px;overflow-y:scroll;">
+                    <ul id="chat-content" class="media-list">
+                        <li class="media">
+                            <div class="media-body">
+                                <div class="media">
+                                    <div class="pull-right">
+                                        Nick name
+                                    </div>
+                                    <div class="media-body">
+                                        Donec sit amet ligula enim. Duis vel condimentum massa.
+                                        Donec sit amet ligula enim. Duis vel condimentum massa.Donec sit amet ligula
+                                        enim.
+                                        Duis vel condimentum massa.
+                                        Donec sit amet ligula enim. Duis vel condimentum massa.
+                                        <br/>
+                                        <small class="text-muted">Alex Deo | 23rd June at 5:00pm</small>
+                                        <hr/>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </li>
+                        <li class="media">
+                            <div class="media-body">
+                                <div class="media">
+                                    <a class="pull-left" href="#">
+                                        <img class="media-object img-circle " src="assets/img/user.gif"/>
+                                    </a>
+                                    <div class="media-body">
+                                        Donec sit amet ligula enim. Duis vel condimentum massa.
+
+                                        Donec sit amet ligula enim. Duis vel condimentum massa.Donec sit amet ligula
+                                        enim.
+                                        Duis vel condimentum massa.
+                                        Donec sit amet ligula enim. Duis vel condimentum massa.
+                                        <br/>
+                                        <small class="text-muted">Jhon Rexa | 23rd June at 5:00pm</small>
+                                        <hr/>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="panel-footer">
+                    <div class="input-group">
+                        <input type="text" id="msg" class="form-control" placeholder="Enter Message"/>
+                        <span class="input-group-btn">
+                                        <button class="btn btn-info" type="button" onclick="send()">SEND</button>
+                                    </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    在线用户
+                </div>
+                <div class="panel-body" style="height: 500px;overflow-y:scroll;">
+                    <ul class="media-list">
+                        <li class="media">
+                            <div class="media-body">
+                                <div class="media">
+                                    <div class="media-body">
+                                        <h5>Alex Deo | User </h5>
+                                        <small class="text-muted">Active From 3 hours</small>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="panel-footer">
+                    <form class="form-inline">
+                            <input type="text" id="server" class="form-control" placeholder="服务器"/>
+                        <div class="input-group">
+                            <input type="text" id="nickname" class="form-control" placeholder="昵称"/>
+                            <span class="input-group-btn">
+                                        <button class="btn btn-info" type="button" onclick="connect()">连接</button>
+                            </span>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--接收到消息的显示模板-->
+<li id="recevechat" class="media hidden">
+    <div class="media-body">
+        <div class="media">
+            <div class="pull-left">
+                Nick name
+            </div>
+            <div class="media-body">
+                <div class="msg"></div>
+                <br/>
+                <small class="text-muted">Alex Deo | 23rd June at 5:00pm</small>
+                <hr/>
+            </div>
+        </div>
+    </div>
+</li>
+
+<!--发送消息的显示模板-->
+<li id="mychat" class="media hidden">
+    <div class="media-body">
+        <div class="media">
+            <div class="pull-right">
+                Nick name
+            </div>
+            <div class="media-body">
+                <div class="msg"></div>
+                <br/>
+                <small class="text-muted">Alex Deo | 23rd June at 5:00pm</small>
+                <hr/>
+            </div>
+        </div>
+    </div>
+</li>
+
+<!--在线用户模板-->
+<li id="user" class="media hidden">
+    <div class="media-body">
+        <div class="media">
+            <div class="media-body">
+                <h5></h5>
+                <small class="text-muted"></small>
+            </div>
+        </div>
+
+    </div>
+</li>
+<script src="../static/jquery-3.4.0.min.js"></script>
+<script>
+    function send() {
+        // 获得用户输入
+        var msg = $("#msg").val();
+        if (!msg) {
+            return;
+        }
+        // 设置消息
+        var mychat = $($("#mychat").html());
+        mychat.removeAttr("id");
+        mychat.find(".msg").text(msg);
+        mychat.find(".text-muted").text(new Date().format("hh:mm:ss"));
+        // 添加到聊天窗口
+        var chatContent = $("#chat-content");
+        chatContent.append(mychat);
+        scroll_to_down();
+    }
+
+    function scroll_to_down() {
+        // 滚动到底部
+        var chatdiv = document.getElementById('chat');
+        chatdiv.scrollTop = chatdiv.scrollHeight
+    }
+
+    Date.prototype.format = function (fmt) {
+        var o = {
+            "M+": this.getMonth() + 1,                 //月份
+            "d+": this.getDate(),                    //日
+            "h+": this.getHours(),                   //小时
+            "m+": this.getMinutes(),                 //分
+            "s+": this.getSeconds(),                 //秒
+            "q+": Math.floor((this.getMonth() + 3) / 3), //季度
+            "S": this.getMilliseconds()             //毫秒
+        };
+        if (/(y+)/.test(fmt)) {
+            fmt = fmt.replace(RegExp.$1, (this.getFullYear() + "").substr(4 - RegExp.$1.length));
+        }
+        for (var k in o) {
+            if (new RegExp("(" + k + ")").test(fmt)) {
+                fmt = fmt.replace(RegExp.$1, (RegExp.$1.length == 1) ? (o[k]) : (("00" + o[k]).substr(("" + o[k]).length)));
+            }
+        }
+        return fmt;
+    }
+</script>
+</body>
+</html>
