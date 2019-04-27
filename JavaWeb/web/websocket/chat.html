@@ -18,13 +18,15 @@
                     <ul id="chat-content" class="media-list"/>
                 </div>
                 <div class="panel-footer">
-                    <div class="input-group">
-                        <input type="text" id="msg" class="form-control" placeholder="输入消息" disabled/>
-                        <span class="input-group-btn">
-                            <input id="btnSend" class="btn btn-info" type="button" onclick="send()"
+                    <form>
+                        <div class="input-group">
+                            <input type="text" id="msg" class="form-control" placeholder="输入消息" disabled required/>
+                            <span class="input-group-btn">
+                            <input id="btnSend" class="btn btn-info" type="submit" onclick="send(this)"
                                    value="发送" disabled/>
                         </span>
-                    </div>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
@@ -113,9 +115,10 @@
     var websocket = null;
 
     function connect(btn) {
-        // 检查昵称，如果空，什么都不做
-        var nickname = $("#nickname").val();
-        if (!nickname) {
+        // 检查昵称，如果空，显示出错信息
+        var form = $(btn).parents("form")[0];
+        if (!form.checkValidity()) {
+            form.reportValidity();
             return;
         }
         if (btn.value === "连接") {
@@ -132,7 +135,14 @@
         }
     }
 
-    function send() {
+    function send(btn) {
+        event.preventDefault();
+        // 检查消息，如果空，显示出错信息
+        var form = $(btn).parents("form")[0];
+        if (!form.checkValidity()) {
+            form.reportValidity();
+            return;
+        }
         // 获得用户输入
         var msg = $("#msg").val();
         if (!msg) {
