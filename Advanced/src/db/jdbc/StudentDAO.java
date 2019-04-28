@@ -16,7 +16,7 @@ public class StudentDAO {
 
 	public Student findByNo(String no) {
 		String sql = "select * from Student where no='" + no + "'";
-		try (Statement stmt = dbHelper.getConnection().createStatement(); ResultSet rs = stmt.executeQuery(sql);) {
+		try (Statement stmt = dbHelper.getMysqlConnection().createStatement(); ResultSet rs = stmt.executeQuery(sql);) {
 
 			if (!rs.next()) {
 				return null;

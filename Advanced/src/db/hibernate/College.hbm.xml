@@ -3,7 +3,7 @@
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <!-- Generated 2019-3-31 23:15:19 by Hibernate Tools 3.5.0.Final -->
 <hibernate-mapping>
-    <class name="db.hibernate.College" table="COLLEGE">
+    <class name="db.hibernate.College" table="College">
         <id name="Id" type="java.lang.String">
             <column name="ID" />
             <generator class="assigned" />

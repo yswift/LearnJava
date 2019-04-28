@@ -8,8 +8,8 @@
           <element id="module-output" name="JavaWeb" />
         </element>
         <element id="directory" name="lib">
-          <element id="library" level="project" name="mysql-connector-java-8.0.15" />
-          <element id="library" level="project" name="gson-2.8.5" />
+          <element id="file-copy" path="$PROJECT_DIR$/lib/gson-2.8.5.jar" />
+          <element id="dir-copy" path="$PROJECT_DIR$/lib/jdbc" />
         </element>
       </element>
     </root>

@@ -66,7 +66,8 @@ public class TestJdbc {
 
 	public static void main(String[] args) throws SQLException {
 		TestJdbc test = new TestJdbc();
-		try (Connection connection = DriverManager.getConnection(DbHelper.connectionUrl)) {
+		DbHelper helper = new DbHelper();
+		try (Connection connection = helper.getMysqlConnection()) {
 			test.connection = connection;
 			test.deleteAll();
 			

@@ -13,14 +13,23 @@
 		<class>db.model.User</class>
 		<class>db.model.UserInfo</class>
 		<properties>
+			<!--<property name="javax.persistence.jdbc.driver"-->
+				<!--value="com.microsoft.sqlserver.jdbc.SQLServerDriver" />-->
+			<!--<property name="javax.persistence.jdbc.url"-->
+				<!--value="jdbc:sqlserver://localhost:1433;databaseName=LearnJava;" />-->
+			<!--<property name="javax.persistence.jdbc.user"-->
+					  <!--value="LearnJava" />-->
+			<!--<property name="javax.persistence.jdbc.password"-->
+					  <!--value="LearnJavaPwd" />-->
+
 			<property name="javax.persistence.jdbc.driver"
-				value="com.microsoft.sqlserver.jdbc.SQLServerDriver" />
+					  value="com.mysql.jdbc.Driver" />
 			<property name="javax.persistence.jdbc.url"
-				value="jdbc:sqlserver://localhost:1433;databaseName=LearnJava;" />
+					  value="jdbc:mysql://10.10.50.54:3306/LearnJava?serverTimezone=GMT%2B8&amp;characterEncoding=UTF-8" />
 			<property name="javax.persistence.jdbc.user"
-				value="LearnJava" />
+					  value="learnjavauser" />
 			<property name="javax.persistence.jdbc.password"
-				value="LearnJavaPwd" />
+					  value="learnjavapwd" />
 
 			<property name="hibernate.show_sql" value="false" />
 			<property name="hibernate.format_sql" value="true" />

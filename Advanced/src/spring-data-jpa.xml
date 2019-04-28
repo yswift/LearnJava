@@ -21,7 +21,7 @@
 		entity-manager-factory-ref="entityManagerFactory"
 		transaction-manager-ref="transactionManager" />
 
-	<bean id="dataSource"
+	<!--<bean id="dataSource"
 		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
 		<property name="driverClassName"
 			value="com.microsoft.sqlserver.jdbc.SQLServerDriver" />
@@ -29,13 +29,28 @@
 			value="jdbc:sqlserver://localhost:1433;databaseName=LearnJava;" />
 		<property name="username" value="LearnJava" />
 		<property name="password" value="LearnJavaPwd" />
+	</bean>-->
+	<bean id="dataSource"
+		  class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName"
+				  value="com.mysql.jdbc.Driver" />
+		<property name="url"
+				  value="jdbc:mysql://10.10.50.54:3306/LearnJava?serverTimezone=GMT%2B8&amp;characterEncoding=UTF-8" />
+		<property name="username" value="learnjavauser" />
+		<property name="password" value="learnjavapwd" />
 	</bean>
 
-	<bean id="jpaVendorAdapter"
+	<!--<bean id="jpaVendorAdapter"
 		class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter">
 		<property name="generateDdl" value="false" />
 		<property name="showSql" value="false" />
 		<property name="databasePlatform" value="org.hibernate.dialect.SQLServerDialect"/>
+	</bean>-->
+	<bean id="jpaVendorAdapter"
+		  class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter">
+		<property name="generateDdl" value="false" />
+		<property name="showSql" value="false" />
+		<property name="databasePlatform" value="org.hibernate.dialect.MySQLDialect"/>
 	</bean>
 
 	<bean id="entityManagerFactory"
