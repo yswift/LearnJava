@@ -117,7 +117,9 @@
     function connect(btn) {
         // 检查昵称，如果空，显示出错信息
         var form = $(btn).parents("form")[0];
+        // 验证
         if (!form.checkValidity()) {
+            // 显示验证结果
             form.reportValidity();
             return;
         }
