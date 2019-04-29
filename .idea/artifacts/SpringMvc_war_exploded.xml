@@ -14,6 +14,7 @@
           <element id="dir-copy" path="$PROJECT_DIR$/lib/spring" />
           <element id="dir-copy" path="$PROJECT_DIR$/lib/spring-data" />
           <element id="dir-copy" path="$PROJECT_DIR$/lib/spring-mvc" />
+          <element id="file-copy" path="$PROJECT_DIR$/lib/gson-2.8.5.jar" />
         </element>
       </element>
     </root>
