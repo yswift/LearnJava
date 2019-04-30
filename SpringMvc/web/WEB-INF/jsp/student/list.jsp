@@ -13,6 +13,17 @@
 <br />
 
 <div class="container">
+    <%--如果是从其它页面调整到，本页面，需要显示消息--%>
+    <% String msg = request.getParameter("msg"); %>
+    <% if (msg != null && msg.length() > 0) { %>
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+        <%= msg %>
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <% } // end if msg %>
+
     <h3>学生列表</h3>
     <table class="table">
         <thead>
@@ -22,7 +33,7 @@
             <th scope="col">姓名</th>
             <th scope="col">年龄</th>
             <th scope="col">出生日期</th>
-            <th scope="col"><a href="create" >新建</a></th>
+            <th scope="col"><a href="/student/create" >新建</a></th>
         </tr>
         </thead>
         <tbody>

@@ -1,6 +1,5 @@
 package demo.controller;
 
-import demo.model.College;
 import demo.model.Student;
 import demo.repository.StudentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,6 +13,9 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
+import java.io.UnsupportedEncodingException;
+import java.net.URLEncoder;
+import java.nio.charset.StandardCharsets;
 import java.util.List;
 
 @Controller
@@ -38,7 +40,8 @@ public class StudentController {
     public String create(Student s, MultipartFile photofile) {
         uploadPhoto(s, photofile);
         repository.save(s);
-        return "redirect:/student/list";
+        String msg = "保存【" + s.getName() + "】成功！";
+        return "redirect:/student/list?msg=" + encodeValue(msg);
     }
 
     private void uploadPhoto(Student s, MultipartFile photofile) {
@@ -68,7 +71,8 @@ public class StudentController {
             s.setPhoto(student.getPhoto());
         }
         repository.save(s);
-        return "redirect:/student/list";
+        String msg = "保存【" + s.getName() + "】成功！";
+        return "redirect:/student/list?msg=" + encodeValue(msg);
     }
 
     @GetMapping("detail/{id:\\d+}")
@@ -83,13 +87,22 @@ public class StudentController {
         Student s = repository.findById(id).get();
         HttpHeaders headers = new HttpHeaders();
         headers.setContentType(MediaType.IMAGE_JPEG);
-        ResponseEntity<byte[]> responseEntity = new ResponseEntity<>(s.getPhoto(), headers, HttpStatus.OK);
-        return responseEntity;
+        return new ResponseEntity<>(s.getPhoto(), headers, HttpStatus.OK);
     }
 
     @GetMapping("delete/{id:\\d+}")
     public String delete(@PathVariable int id) {
         repository.deleteById(id);
-        return "redirect:/student/list";
+        String msg = "删除成功！";
+        return "redirect:/student/list?msg=" + encodeValue(msg);
+    }
+
+    private String encodeValue(String value) {
+        try {
+            return URLEncoder.encode(value, StandardCharsets.UTF_8.toString());
+        } catch (UnsupportedEncodingException e) {
+            e.printStackTrace();
+            return value;
+        }
     }
 }
