@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 public class DemoController {
     @RequestMapping("/")
     public String home(Model model) {
-        model.addAttribute("msg", "杀手你给我");
+        model.addAttribute("msg", "test");
         return "home";
     }
 

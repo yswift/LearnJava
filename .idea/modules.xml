@@ -7,9 +7,9 @@
       <module fileurl="file://$PROJECT_DIR$/JavaWeb/JavaWeb.iml" filepath="$PROJECT_DIR$/JavaWeb/JavaWeb.iml" />
       <module fileurl="file://$PROJECT_DIR$/SpringMvc/SpringMvc.iml" filepath="$PROJECT_DIR$/SpringMvc/SpringMvc.iml" />
       <module fileurl="file://$PROJECT_DIR$/Zfxt/Zfxt.iml" filepath="$PROJECT_DIR$/Zfxt/Zfxt.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/cn.edu.uoh.cs.springbootdemo.iml" filepath="$PROJECT_DIR$/.idea/modules/cn.edu.uoh.cs.springbootdemo.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/cn.edu.uoh.cs.springbootdemo.main.iml" filepath="$PROJECT_DIR$/.idea/modules/cn.edu.uoh.cs.springbootdemo.main.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/cn.edu.uoh.cs.springbootdemo.test.iml" filepath="$PROJECT_DIR$/.idea/modules/cn.edu.uoh.cs.springbootdemo.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/springbootdemo.iml" filepath="$PROJECT_DIR$/.idea/modules/springbootdemo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/springbootdemo.main.iml" filepath="$PROJECT_DIR$/.idea/modules/springbootdemo.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/springbootdemo.test.iml" filepath="$PROJECT_DIR$/.idea/modules/springbootdemo.test.iml" />
     </modules>
   </component>
 </project>
