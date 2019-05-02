@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+
+    <meta charset="UTF-8">
+    <title>部门列表</title>
+    <link rel="stylesheet" th:href="@{/bootstrap.css}" href="/bootstrap.css">
+</head>
+<body>
+<!--导航条-->
+<div th:replace="/share/template :: nav"></div>
+
+<div class="container">
+    <div th:if="${msg} != null" class="alert alert-success alert-dismissible fade show" role="alert">
+        <span th:text="${msg}"></span>
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+
+    <table id="myTable" class="table">
+        <thead>
+        <tr>
+            <td>部门代码</td>
+            <td>部门名称</td>
+            <td><a th:href="@{/department/create}" href="">新建</a></td>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="d : ${page.getContent()}">
+            <td th:text="${d.id}"></td>
+            <td th:text="${d.name}"></td>
+            <td>
+                <a th:href="@{'edit/' + ${d.id}}">编辑</a>&nbsp;
+                <a th:href="@{'delete/' + ${d.id}}">删除</a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+<!--    分页按钮-->
+    <nav aria-label="Page navigation">
+        <ul class="pagination justify-content-end">
+            <li th:each="no,iterStat : ${#numbers.sequence(0, page.getTotalPages()-1)}" class="page-item">
+                <a class="page-link" th:href="@{list(pageNo=${no})}"
+                   th:text="${iterStat.count}"></a>
+            </li>
+        </ul>
+    </nav>
+</div>
+
+
+
+<div th:replace="~{/share/template :: js}"></div>
+<script>
+    $('.toast').toast('show')
+</script>
+</body>
+</html>

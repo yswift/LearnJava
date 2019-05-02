@@ -1,0 +1,45 @@
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head th:fragment="header">
+    <!--    <title th:text="${title}">Home</title>-->
+    <link rel="stylesheet" th:href="@{/bootstrap.css}" href="/bootstrap.css">
+</head>
+
+<body>
+<nav th:fragment="nav" class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <a class="navbar-brand" href="#">导航条</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="/" th:href="@{/}">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/department/list" th:href="@{/department/list}">部门管理</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/role/list" th:href="@{/role/list}">角色管理</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/user/list" th:href="@{/user/list}">用户管理</a>
+            </li>
+        </ul>
+        <ul class="navbar-nav justify-content-end">
+            <li class="nav-item active">
+                <a class="nav-link" href="/" th:href="@{/login}">登录</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<div th:fragment="js">
+    <script th:src="@{/js/jquery.min.js}" src="/jquery-3.4.0.min.js"></script>
+    <script th:src="@{/js/bootstrap.min.js}" src="/bootstrap.min.js"></script>
+    <script th:src="@{/js/popper.min.js}" src="/popper.min.js"></script>
+</div>
+</body>
+</html>
