@@ -36,10 +36,11 @@ public class DeparmentController {
 
     }
 
-    @PostMapping("create")
-    public String create(Department entity) {
+    // create，edit都用此方法保存
+    @PostMapping("save")
+    public String save(Department entity) {
         repository.save(entity);
-        String msg = StringUtil.encodeValue("新建【"+entity+"】成功");
+        String msg = StringUtil.encodeValue("保存【"+entity+"】成功");
         return "redirect:list?msg="+msg;
     }
 
@@ -48,13 +49,6 @@ public class DeparmentController {
         Department entity = repository.findById(id).get();
         model.addAttribute("entity", entity);
         return "/department/edit";
-    }
-
-    @PostMapping("edit/{id}")
-    public String edit(Department entity) {
-        repository.save(entity);
-        String msg = StringUtil.encodeValue("修改【"+entity+"】成功");
-        return "redirect:/department/list?msg="+msg;
     }
 
     @GetMapping("delete/{id}")
