@@ -7,10 +7,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="32328a54-07c5-426b-a6be-b1b6a0e29adc" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/SpringBoot/src/main/java/cn/edu/uoh/cs/springbootdemo/controller/EntityController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SpringBoot/src/main/java/cn/edu/uoh/cs/springbootdemo/controller/RoleController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SpringBoot/src/main/java/cn/edu/uoh/cs/springbootdemo/controller/UserController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SpringBoot/src/main/resources/templates/role/edit.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SpringBoot/src/main/resources/templates/role/list.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SpringBoot/src/main/java/cn/edu/uoh/cs/springbootdemo/controller/DeparmentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/SpringBoot/src/main/java/cn/edu/uoh/cs/springbootdemo/controller/DeparmentController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SpringBoot/src/main/resources/templates/department/create.html" beforeDir="false" afterPath="$PROJECT_DIR$/SpringBoot/src/main/resources/templates/department/create.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SpringBoot/src/main/resources/templates/department/edit.html" beforeDir="false" afterPath="$PROJECT_DIR$/SpringBoot/src/main/resources/templates/department/edit.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringBoot/src/main/resources/db.sql" beforeDir="false" afterPath="$PROJECT_DIR$/SpringBoot/src/main/resources/db.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringBoot/src/main/resources/templates/department/list.html" beforeDir="false" afterPath="$PROJECT_DIR$/SpringBoot/src/main/resources/templates/department/list.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/Advanced/bin/" />
@@ -61,7 +65,7 @@
         <item name="jdbc:mysql://localhost:3306/LearnJava?serverTimezone=GMT%2B8&amp;characterEncoding=UTF-8" type="feb32156:DbDataSourceImpl" />
         <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
         <item name="LearnJava: schema" type="76f4a085:MysqlImplModel$Schema" />
-        <item name="users: table" type="285a2a93:MysqlImplModel$Table" />
+        <item name="departments: table" type="285a2a93:MysqlImplModel$Table" />
       </path>
     </expand>
     <select />
@@ -113,22 +117,72 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/SpringBoot/src/main/java/cn/edu/uoh/cs/springbootdemo/controller/DeparmentController.java">
+        <entry file="file://$PROJECT_DIR$/SpringBoot/src/main/java/cn/edu/uoh/cs/springbootdemo/controller/EntityController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="189">
-              <caret line="9" selection-start-line="9" selection-end-line="9" />
+            <state relative-caret-position="406">
+              <caret line="39" lean-forward="true" selection-start-line="39" selection-end-line="39" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/SpringBoot/src/main/java/cn/edu/uoh/cs/springbootdemo/repository/DepartmentRepository.java">
+        <entry file="file://$PROJECT_DIR$/SpringBoot/src/main/resources/templates/role/edit.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="5" column="37" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="37" />
+            <state relative-caret-position="756">
+              <caret line="36" column="49" selection-start-line="36" selection-start-column="49" selection-end-line="36" selection-end-column="49" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/SpringBoot/src/main/resources/templates/department/list.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="357">
+              <caret line="17" column="50" selection-start-line="17" selection-start-column="36" selection-end-line="17" selection-end-column="50" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/SpringBoot/src/main/java/cn/edu/uoh/cs/springbootdemo/controller/RoleController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="357">
+              <caret line="17" column="5" lean-forward="true" selection-start-line="14" selection-start-column="4" selection-end-line="17" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#365#366#0" expanded="true" />
+                <element signature="e#392#393#0" expanded="true" />
+                <element signature="e#450#451#0" expanded="true" />
+                <element signature="e#477#478#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/SpringBoot/src/main/java/cn/edu/uoh/cs/springbootdemo/controller/UserController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="294">
+              <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#413#414#0" expanded="true" />
+                <element signature="e#446#447#0" expanded="true" />
+                <element signature="e#502#503#0" expanded="true" />
+                <element signature="e#537#538#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/SpringBoot/src/main/resources/templates/role/list.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="399">
+              <caret line="28" column="47" selection-start-line="28" selection-start-column="47" selection-end-line="28" selection-end-column="47" />
             </state>
           </provider>
         </entry>
@@ -142,8 +196,8 @@
         <option value="JavaScript File" />
         <option value="spring-beans.schema" />
         <option value="Jsp File" />
-        <option value="Class" />
         <option value="HTML File" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -173,12 +227,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/SpringMvc/web/WEB-INF/jsp/demo/param.jsp" />
-        <option value="$PROJECT_DIR$/SpringMvc/src/demo/model/College.java" />
-        <option value="$PROJECT_DIR$/SpringMvc/src/demo/controller/DemoRequestController.java" />
-        <option value="$PROJECT_DIR$/SpringMvc/src/demo/controller/DemoPathVariableController.java" />
-        <option value="$PROJECT_DIR$/SpringMvc/src/demo/controller/DemoData2ViewController.java" />
-        <option value="$PROJECT_DIR$/SpringMvc/src/demo/controller/DemoReturnValueController.java" />
         <option value="$PROJECT_DIR$/SpringMvc/web/WEB-INF/jsp/demo/college.jsp" />
         <option value="$PROJECT_DIR$/SpringMvc/src/demo/controller/DemoViewNameController.java" />
         <option value="$PROJECT_DIR$/SpringMvc/src/demo/controller/HomeController.java" />
@@ -211,19 +259,25 @@
         <option value="$PROJECT_DIR$/SpringBoot/src/main/java/cn/edu/uoh/cs/springbootdemo/service/DepartmentService.java" />
         <option value="$PROJECT_DIR$/SpringBoot/src/main/java/cn/edu/uoh/cs/springbootdemo/model/Role.java" />
         <option value="$PROJECT_DIR$/SpringBoot/src/main/java/cn/edu/uoh/cs/springbootdemo/model/User.java" />
-        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/1d3cace5-f7dd-4127-a388-20025733ba4b/console.sql" />
         <option value="$PROJECT_DIR$/SpringBoot/src/main/resources/templates/share/nav.html" />
         <option value="$PROJECT_DIR$/SpringBoot/src/main/resources/templates/share/header.html" />
         <option value="$PROJECT_DIR$/SpringBoot/src/main/resources/templates/share/js.html" />
-        <option value="$PROJECT_DIR$/SpringBoot/src/main/resources/db.sql" />
         <option value="$PROJECT_DIR$/SpringBoot/src/main/java/cn/edu/uoh/cs/springbootdemo/utils/StringUtil.java" />
         <option value="$PROJECT_DIR$/SpringBoot/src/main/java/cn/edu/uoh/cs/springbootdemo/model/Department.java" />
         <option value="$PROJECT_DIR$/SpringBoot/src/main/java/cn/edu/uoh/cs/springbootdemo/SecurityConfig.java" />
-        <option value="$PROJECT_DIR$/SpringBoot/src/main/resources/templates/department/list.html" />
         <option value="$PROJECT_DIR$/SpringBoot/src/main/resources/templates/share/template.html" />
         <option value="$PROJECT_DIR$/SpringBoot/src/main/resources/templates/department/create.html" />
         <option value="$PROJECT_DIR$/SpringBoot/src/main/resources/templates/department/edit.html" />
         <option value="$PROJECT_DIR$/SpringBoot/src/main/java/cn/edu/uoh/cs/springbootdemo/controller/DeparmentController.java" />
+        <option value="$PROJECT_DIR$/SpringBoot/src/main/resources/templates/role/create.html" />
+        <option value="$PROJECT_DIR$/SpringBoot/src/main/resources/db.sql" />
+        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/1d3cace5-f7dd-4127-a388-20025733ba4b/console.sql" />
+        <option value="$PROJECT_DIR$/SpringBoot/src/main/resources/templates/department/list.html" />
+        <option value="$PROJECT_DIR$/SpringBoot/src/main/resources/templates/role/list.html" />
+        <option value="$PROJECT_DIR$/SpringBoot/src/main/java/cn/edu/uoh/cs/springbootdemo/controller/RoleController.java" />
+        <option value="$PROJECT_DIR$/SpringBoot/src/main/java/cn/edu/uoh/cs/springbootdemo/controller/UserController.java" />
+        <option value="$PROJECT_DIR$/SpringBoot/src/main/java/cn/edu/uoh/cs/springbootdemo/controller/EntityController.java" />
+        <option value="$PROJECT_DIR$/SpringBoot/src/main/resources/templates/role/edit.html" />
       </list>
     </option>
   </component>
@@ -294,7 +348,58 @@
               <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="springbootdemo" type="462c0819:PsiDirectoryNode" />
+              <item name="model" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="LearnJava" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SpringBoot" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="springbootdemo" type="462c0819:PsiDirectoryNode" />
               <item name="repository" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="LearnJava" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SpringBoot" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="LearnJava" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SpringBoot" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="LearnJava" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SpringBoot" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+              <item name="department" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="LearnJava" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SpringBoot" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+              <item name="role" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="LearnJava" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SpringBoot" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+              <item name="share" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -318,7 +423,7 @@
     <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1556621593428" />
     <property name="database.console.LAST_STATE" value="false" />
     <property name="extract.method.default.visibility" value="private" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/SpringBoot/src/main/resources/static/js" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/SpringBoot/src/main/resources/templates/role" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
@@ -326,23 +431,23 @@
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Work\LearnJava\SpringBoot\src\main\resources\templates\role" />
+      <recent name="D:\Work\LearnJava\SpringBoot\src\main\resources\static\js" />
+      <recent name="D:\Work\LearnJava\SpringBoot\src\main\resources\static\css" />
+      <recent name="D:\Work\LearnJava\SpringBoot\src\main\java\cn\edu\uoh\cs\springbootdemo\model" />
+      <recent name="D:\Work\LearnJava\SpringBoot\src\main\resources\templates\share" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="db.springdata" />
+      <recent name="example" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="E:\Work\LearnJava\SpringMvc\web" />
       <recent name="E:\Work\LearnJava\JavaWeb\web\static" />
       <recent name="D:\Work\LearnJava\JavaWeb\web\static" />
       <recent name="D:\Work\LearnJava\JavaWeb\web" />
       <recent name="E:\Work\LearnJava\Advanced\libs\jdbc" />
-    </key>
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="db.springdata" />
-      <recent name="example" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\Work\LearnJava\SpringBoot\src\main\resources\static\js" />
-      <recent name="D:\Work\LearnJava\SpringBoot\src\main\resources\static\css" />
-      <recent name="D:\Work\LearnJava\SpringBoot\src\main\java\cn\edu\uoh\cs\springbootdemo\model" />
-      <recent name="D:\Work\LearnJava\SpringBoot\src\main\resources\templates\share" />
-      <recent name="D:\Work\LearnJava\SpringBoot\src\main\resources\static" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -647,7 +752,7 @@
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4978308" visible="true" weight="0.20308311" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4978308" visible="true" weight="0.21983914" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Web" order="2" sideWeight="0.5021692" side_tool="true" weight="0.16577825" />
       <window_info id="Designer" order="3" />
@@ -658,7 +763,7 @@
       <window_info id="Persistence" order="8" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3286119" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49929577" weight="0.25354108" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49929577" weight="0.20538244" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3512748" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -674,7 +779,7 @@
       <window_info anchor="bottom" id="Terminal" order="15" weight="0.3290993" />
       <window_info anchor="bottom" id="Problems" order="16" />
       <window_info anchor="bottom" id="Build" order="17" weight="0.27478755" />
-      <window_info anchor="bottom" id="Database Console" order="18" weight="0.3286119" />
+      <window_info anchor="bottom" id="Database Console" order="18" weight="0.24504249" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -754,66 +859,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/SpringBoot/src/main/java/cn/edu/uoh/cs/springbootdemo/controller/DemoController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="19" column="5" lean-forward="true" selection-start-line="19" selection-start-column="5" selection-end-line="19" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SpringMvc/src/demo/controller/DemoPathVariableController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="18" column="34" selection-start-line="18" selection-start-column="22" selection-end-line="18" selection-end-column="34" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SpringMvc/src/demo/controller/DemoViewNameController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="18" selection-start-line="18" selection-end-line="22" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#628#629#0" expanded="true" />
-            <element signature="e#680#681#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SpringMvc/src/demo/controller/DemoRequestController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="110">
-          <caret line="12" column="25" lean-forward="true" selection-start-line="12" selection-start-column="25" selection-end-line="12" selection-end-column="25" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/JavaWeb/src/example/StudentServlet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="430">
-          <caret line="117" column="32" lean-forward="true" selection-start-line="117" selection-start-column="12" selection-end-line="117" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SpringMvc/src/demo/controller/DemoData2ViewController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="506">
-          <caret line="26" column="23" selection-start-line="26" selection-start-column="11" selection-end-line="26" selection-end-column="23" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SpringBoot/src/main/resources/templates/share.html" />
     <entry file="file://$PROJECT_DIR$/SpringBoot/src/main/resources/static/bootstrap.css">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -908,26 +953,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/1d3cace5-f7dd-4127-a388-20025733ba4b/console.sql">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SpringBoot/src/main/java/cn/edu/uoh/cs/springbootdemo/model/Role.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="15" column="32" selection-start-line="15" selection-start-column="23" selection-end-line="15" selection-end-column="32" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SpringBoot/src/main/java/cn/edu/uoh/cs/springbootdemo/model/User.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="294">
-          <caret line="16" column="12" selection-start-line="16" selection-start-column="12" selection-end-line="16" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/SpringBoot/src/main/resources/templates/department/listAll.html" />
     <entry file="file://$PROJECT_DIR$/SpringBoot/src/main/resources/static/js/jquery-3.4.0.min.js" />
     <entry file="file://$PROJECT_DIR$/SpringBoot/src/main/resources/templates/share/nav.html" />
@@ -1005,13 +1030,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/SpringBoot/src/main/resources/db.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="231">
-          <caret line="11" column="24" lean-forward="true" selection-start-line="11" selection-start-column="24" selection-end-line="11" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/SpringMvc/web/WEB-INF/jsp/student/list.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="378">
@@ -1061,20 +1079,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/SpringBoot/src/main/resources/templates/department/list.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="13" column="51" lean-forward="true" selection-start-line="13" selection-start-column="51" selection-end-line="13" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SpringBoot/src/main/resources/templates/share/template.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-168">
-          <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/SpringBoot/src/main/resources/templates/department/create.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
@@ -1101,8 +1105,122 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/SpringBoot/src/main/java/cn/edu/uoh/cs/springbootdemo/controller/DeparmentController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="9" selection-start-line="9" selection-end-line="9" />
+        <state relative-caret-position="488">
+          <caret line="58" column="5" lean-forward="true" selection-start-line="19" selection-start-column="4" selection-end-line="58" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SpringBoot/src/main/resources/templates/share/template.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="35" column="36" lean-forward="true" selection-start-line="35" selection-start-column="30" selection-end-line="35" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SpringBoot/src/main/resources/templates/role/create.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="483">
+          <caret line="23" column="64" selection-start-line="23" selection-start-column="62" selection-end-line="23" selection-end-column="64" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SpringBoot/src/main/java/cn/edu/uoh/cs/springbootdemo/model/Role.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="15" column="32" selection-start-line="15" selection-start-column="23" selection-end-line="15" selection-end-column="32" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SpringBoot/src/main/resources/db.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="322">
+          <caret line="88" lean-forward="true" selection-start-line="51" selection-end-line="88" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://1d3cace5-f7dd-4127-a388-20025733ba4b/schema/LearnJava/table/departments">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/1d3cace5-f7dd-4127-a388-20025733ba4b/console.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="84">
+          <caret line="4" column="54" lean-forward="true" selection-start-line="4" selection-start-column="54" selection-end-line="4" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SpringBoot/src/main/java/cn/edu/uoh/cs/springbootdemo/model/User.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="17" column="32" lean-forward="true" selection-start-line="17" selection-start-column="32" selection-end-line="17" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SpringBoot/src/main/resources/templates/role/list.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="399">
+          <caret line="28" column="47" selection-start-line="28" selection-start-column="47" selection-end-line="28" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SpringBoot/src/main/java/cn/edu/uoh/cs/springbootdemo/controller/RoleController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="17" column="5" lean-forward="true" selection-start-line="14" selection-start-column="4" selection-end-line="17" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#365#366#0" expanded="true" />
+            <element signature="e#392#393#0" expanded="true" />
+            <element signature="e#450#451#0" expanded="true" />
+            <element signature="e#477#478#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SpringBoot/src/main/java/cn/edu/uoh/cs/springbootdemo/controller/UserController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="294">
+          <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#413#414#0" expanded="true" />
+            <element signature="e#446#447#0" expanded="true" />
+            <element signature="e#502#503#0" expanded="true" />
+            <element signature="e#537#538#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SpringBoot/src/main/resources/templates/role/edit.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="756">
+          <caret line="36" column="49" selection-start-line="36" selection-start-column="49" selection-end-line="36" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SpringBoot/src/main/resources/templates/department/list.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="17" column="50" selection-start-line="17" selection-start-column="36" selection-end-line="17" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SpringBoot/src/main/java/cn/edu/uoh/cs/springbootdemo/controller/EntityController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="406">
+          <caret line="39" lean-forward="true" selection-start-line="39" selection-end-line="39" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

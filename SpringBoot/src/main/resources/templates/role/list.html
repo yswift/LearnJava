@@ -3,7 +3,7 @@
 <head>
 
     <meta charset="UTF-8">
-    <title>部门列表</title>
+    <title>角色列表</title>
     <link rel="stylesheet" th:href="@{/bootstrap.css}" href="/bootstrap.css">
 </head>
 <body>
@@ -11,16 +11,14 @@
 <div th:replace="/share/template :: nav"></div>
 
 <div class="container">
-    <h3>部门列表</h3>
-
+    <h3>角色列表</h3>
     <div th:replace="/share/template :: msg"></div>
-
     <table id="myTable" class="table table-striped">
         <thead>
         <tr>
-            <th>部门代码</th>
-            <th>部门名称</th>
-            <th><a th:href="@{/department/create}" href="">新建</a></th>
+            <th>角色Id</th>
+            <th>角色名称</th>
+            <th><a th:href="@{create}" href="">新建</a></th>
         </tr>
         </thead>
         <tbody>
@@ -28,7 +26,7 @@
             <td th:text="${d.id}"></td>
             <td th:text="${d.name}"></td>
             <td>
-                <a th:href="@{'edit/' + ${d.id}}">编辑</a>&nbsp;
+                <a th:href="@{edit(id=${d.id})}">编辑</a>&nbsp;
                 <a th:href="@{'delete/' + ${d.id}}">删除</a>
             </td>
         </tr>
@@ -44,8 +42,6 @@
         </ul>
     </nav>
 </div>
-
-
 
 <div th:replace="~{/share/template :: js}"></div>
 <script>

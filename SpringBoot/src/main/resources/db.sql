@@ -4,7 +4,7 @@ GRANT ALL privileges  ON LearnJava.* TO learnjavauser@'%' IDENTIFIED BY 'learnja
 -- 刷新，生效
 FLUSH PRIVILEGES;
 
-create table Departments
+create table departments
 (
 	Id nvarchar(50) not null,
 	Name nvarchar(50) null,
@@ -12,7 +12,7 @@ create table Departments
 		primary key (Id)
 );
 
-create table Users
+create table users
 (
 	Id nvarchar(50) not null,
 	Name nvarchar(50) null,
@@ -21,11 +21,11 @@ create table Users
 	constraint Users_pk
 		primary key (Id),
 	constraint Users_Departments_Id_fk
-		foreign key (Department_Id) references Departments (Id)
+		foreign key (Department_Id) references departments (Id)
 			on update cascade on delete cascade
 );
 
-create table Roles
+create table roles
 (
 	Id nvarchar(50) not null,
 	Name nvarchar(50) null,
@@ -33,18 +33,18 @@ create table Roles
 		primary key (Id)
 );
 
-create table UserRole
+create table user_role
 (
 	Id int auto_increment,
-	RoleId nvarchar(50) not null,
-	UserId nvarchar(50) not null,
+	Role_Id nvarchar(50) not null,
+	User_Id nvarchar(50) not null,
 	constraint UserRole_pk
 		primary key (Id),
 	constraint UserRole_Roles_Id_fk
-		foreign key (RoleId) references Roles (Id)
+		foreign key (Role_Id) references roles (Id)
 			on update cascade on delete cascade,
 	constraint UserRole_Users_Id_fk
-		foreign key (UserId) references Users (Id)
+		foreign key (User_Id) references users (Id)
 			on update cascade on delete cascade
 );
 
