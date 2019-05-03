@@ -2,12 +2,9 @@ package cn.edu.uoh.cs.springbootdemo.service;
 
 import cn.edu.uoh.cs.springbootdemo.model.Department;
 import cn.edu.uoh.cs.springbootdemo.repository.DepartmentRepository;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
-import org.springframework.stereotype.Component;
 
-import java.util.List;
 import java.util.Optional;
 
 //@Component

@@ -9,6 +9,8 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpServletRequest;
+
 public abstract class EntityController<T, IdType> {
     @Autowired
     protected JpaRepository<T, IdType> repository;
@@ -20,14 +22,13 @@ public abstract class EntityController<T, IdType> {
     @GetMapping("list")
     @ModelAttribute("page")
     public Page<T> list(Model model, String msg,
-                                 @RequestParam(name="pageNo", defaultValue = "0") int pageNo,
-                                 @RequestParam(name="pageSize", defaultValue = "10") int pageSize) {
+                        @RequestParam(name = "pageNo", defaultValue = "0") int pageNo,
+                        @RequestParam(name = "pageSize", defaultValue = "10") int pageSize) {
         Pageable pageable = PageRequest.of(pageNo, pageSize);
         Page<T> page = repository.findAll(pageable);
         if (!StringUtil.isEmpty(msg)) {
             model.addAttribute("msg", msg);
         }
-//        model.addAttribute("page", page);
         return page;
     }
 
@@ -35,29 +36,34 @@ public abstract class EntityController<T, IdType> {
     public String create(Model model) {
         model.addAttribute("action", "create");
         model.addAttribute("entity", newInstance());
+        initForeignKeyList(model, null);
         return getEditView();
     }
 
     // create，edit都用此方法保存
     @PostMapping("save")
-    public String save(T entity) {
+    public String save(T entity, HttpServletRequest request) {
         repository.save(entity);
-        String msg = StringUtil.encodeValue("保存【"+entity+"】成功");
-        return "redirect:list?msg="+msg;
+        String msg = StringUtil.encodeValue("保存【" + entity + "】成功");
+        return "redirect:list?msg=" + msg;
     }
 
     @GetMapping("edit")
-    public String edit(Model model, @RequestParam IdType id) {
+    public void edit(Model model, @RequestParam IdType id) {
         T entity = repository.findById(id).get();
         model.addAttribute("action", "edit");
         model.addAttribute("entity", entity);
-        return getEditView();
+        initForeignKeyList(model, entity);
     }
 
     @GetMapping("delete/{id}")
     public String delete(@PathVariable IdType id) {
         repository.deleteById(id);
-        String msg = StringUtil.encodeValue("删除【"+id+"】成功");
-        return "redirect:../list?msg="+msg;
+        String msg = StringUtil.encodeValue("删除【" + id + "】成功");
+        return "redirect:../list?msg=" + msg;
+    }
+
+    // 生成必要外键的列表，用于dropdown或checkbox选择
+    protected void initForeignKeyList(Model model, T entity) {
     }
 }

@@ -2,11 +2,23 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Home</title>
+    <title>Spring boot 案例</title>
+    <link rel="stylesheet" th:href="@{/bootstrap.css}" href="/bootstrap.css">
 </head>
 <body>
-<h2>
-Home page
-</h2>
+<!--导航条-->
+<div th:replace="/share/template :: nav"></div>
+
+<div class="jumbotron">
+    <h1 class="display-4">Spring boot 案例</h1>
+    <p class="lead">欢迎来到spring boot 案例，在这里你能学习到如何使用spring boot搭建一个简单的网站，以及使用jpa访问数据库。</p>
+    <hr class="my-4">
+<!--    <p>课程网站：<a href="http://10.10.50.54/moodle" target="_blank">http://10.10.50.54/moodle</a></p>-->
+<!--    <p>源码位置：<a href="http://gitee.com/yswift/LearnJava" target="_blank">http://gitee.com/yswift/LearnJava</a></p>-->
+<!--    <p>源码位置：<a href="http://github.com/yswift/LearnJava" target="_blank">http://github.com/yswift/LearnJava</a></p>-->
+    <a class="btn btn-secondary btn-lg" href="http://10.10.50.54/moodle" role="button">课程网站</a>
+    <a class="btn btn-info btn-lg" href="http://gitee.com/yswift/LearnJava" role="button">Gitee源码</a>
+    <a class="btn btn-info btn-lg" href="http://github.com/yswift/LearnJava" role="button">Github源码</a>
+</div>
 </body>
 </html>

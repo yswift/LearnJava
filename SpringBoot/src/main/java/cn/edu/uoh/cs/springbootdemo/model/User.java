@@ -3,6 +3,7 @@ package cn.edu.uoh.cs.springbootdemo.model;
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Entity
 @Table(name = "Users")
@@ -87,6 +88,15 @@ public class User {
 
 	public void setRoles(List<Role> roles) {
 		this.roles = roles;
+	}
+
+	public boolean isInRole(String role) {
+		return roles.stream().anyMatch(r -> r.getId().equals(role));
+	}
+
+	// 返回所属的角色名，用“，”分割
+	public String getRoleNames() {
+		return roles.stream().map(Role::getName).collect(Collectors.joining(", "));
 	}
 
 	@Override

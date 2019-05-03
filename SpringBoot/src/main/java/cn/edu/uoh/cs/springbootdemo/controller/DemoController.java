@@ -7,10 +7,10 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
 public class DemoController {
-    @RequestMapping("/")
+    @RequestMapping("/demo")
     public String home(Model model) {
         model.addAttribute("msg", "test");
-        return "home";
+        return "demo";
     }
 
     @RequestMapping("/test")

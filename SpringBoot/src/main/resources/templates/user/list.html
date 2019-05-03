@@ -1,9 +1,8 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-
     <meta charset="UTF-8">
-    <title>角色列表</title>
+    <title>用户列表</title>
     <link rel="stylesheet" th:href="@{/bootstrap.css}" href="/bootstrap.css">
 </head>
 <body>
@@ -14,15 +13,17 @@
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a th:href="@{/}">主页</a></li>
-            <li class="breadcrumb-item active" aria-current="page">角色列表</li>
+            <li class="breadcrumb-item active" aria-current="page">用户列表</li>
         </ol>
     </nav>
     <div th:replace="/share/template :: msg"></div>
     <table id="myTable" class="table table-striped">
         <thead>
         <tr>
-            <th>角色Id</th>
-            <th>角色名称</th>
+            <th>用户Id</th>
+            <th>用户名称</th>
+            <th>所属部门</th>
+            <th>角色</th>
             <th><a th:href="@{create}" href="">新建</a></th>
         </tr>
         </thead>
@@ -30,6 +31,8 @@
         <tr th:each="d : ${page.getContent()}">
             <td th:text="${d.id}"></td>
             <td th:text="${d.name}"></td>
+            <td th:text="${d.department.name}"></td>
+            <td th:text="${d.roleNames}"></td>
             <td>
                 <a th:href="@{edit(id=${d.id})}">编辑</a>&nbsp;
                 <a th:href="@{'delete/' + ${d.id}}">删除</a>
