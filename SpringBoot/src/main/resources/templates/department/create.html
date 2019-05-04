@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>新建</title>
-    <link rel="stylesheet" th:href="@{/bootstrap.css}" href="/bootstrap.css">
+    <link rel="stylesheet" th:href="@{/css/bootstrap.css}" href="/bootstrap.css">
 </head>
 <body>
 <!--导航条-->
@@ -12,8 +12,6 @@
 <div class="container">
     <h3>新建部门</h3>
     <form th:action="@{/department/save}" method="post">
-<!--        引入spring security后需要安全码-->
-<!--        <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}">-->
         <div class="form-group row">
             <label for="id" class="col-md-2 col-form-label ">编号</label>
             <div class="col-md-10">

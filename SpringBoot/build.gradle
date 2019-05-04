@@ -20,7 +20,10 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
     implementation 'org.springframework.boot:spring-boot-starter-web'
     implementation 'org.springframework.data:spring-data-rest-hal-browser'
-    
+    implementation 'org.thymeleaf.extras:thymeleaf-extras-springsecurity5'
+//    compile group: 'org.thymeleaf.extras', name: 'thymeleaf-extras-springsecurity5', version: '3.0.4.RELEASE'
+
+
     compile("org.springframework.boot:spring-boot-devtools")
     
     runtimeOnly 'mysql:mysql-connector-java'

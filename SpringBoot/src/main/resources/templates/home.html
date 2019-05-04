@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Spring boot 案例</title>
-    <link rel="stylesheet" th:href="@{/bootstrap.css}" href="/bootstrap.css">
+    <link rel="stylesheet" th:href="@{/css/bootstrap.css}" href="/bootstrap.css">
 </head>
 <body>
 <!--导航条-->
@@ -20,5 +20,6 @@
     <a class="btn btn-info btn-lg" href="http://gitee.com/yswift/LearnJava" role="button">Gitee源码</a>
     <a class="btn btn-info btn-lg" href="http://github.com/yswift/LearnJava" role="button">Github源码</a>
 </div>
+<div th:replace="~{/share/template :: js}"></div>
 </body>
 </html>

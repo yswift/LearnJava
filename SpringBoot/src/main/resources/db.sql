@@ -48,7 +48,7 @@ create table user_role
 			on update cascade on delete cascade
 );
 
-
+-- 插入部门
 insert into departments(Id, Name) values('01','人文学院');
 insert into departments(Id, Name) values('02','理学院');
 insert into departments(Id, Name) values('03','工学院');
@@ -86,3 +86,15 @@ insert into departments(Id, Name) values('74','远程与成人教育学院');
 insert into departments(Id, Name) values('75','工会');
 insert into departments(Id, Name) values('76','团委');
 insert into departments(Id, Name) values('77','党校');
+
+-- add role
+insert into roles(Id, Name) values('user', '普通用户');
+insert into roles(Id, Name) values('admin', '系统管理员');
+
+-- add user
+insert into users(id, name, Department_Id, Password) values('user', '普通用户', '03', '123456');
+insert into user_role(user_id, Role_Id) values('user', 'user');
+
+insert into users(id, name, Department_Id, Password) values('admin', '系统管理员', '03', '123456');
+insert into user_role(user_id, Role_Id) values('admin', 'admin');
+

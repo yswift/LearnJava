@@ -6,7 +6,9 @@ import cn.edu.uoh.cs.springbootdemo.repository.DepartmentRepository;
 import cn.edu.uoh.cs.springbootdemo.repository.RoleRepository;
 import cn.edu.uoh.cs.springbootdemo.repository.UserRepository;
 import cn.edu.uoh.cs.springbootdemo.utils.SelectListItem;
+import javassist.NotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.crossstore.ChangeSetPersister;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
@@ -22,6 +24,11 @@ public class UserService {
     @Autowired
     RoleRepository roleRepository;
 
+    public User getById(String id) {
+        Optional<User> ou = userRepository.findById(id);
+        return ou.orElse(null);
+    }
+
     public void save(User user, String[] roles) {
         // 保存时不修改密码
         Optional<User> ou = userRepository.findById(user.getId());
@@ -30,6 +37,9 @@ public class UserService {
         } else {
             // 如果是新用户，初始密码是123456
             user.setPassword("123456");
+        }
+        if (roles == null) {
+            roles = new String[]{};
         }
         List<Role> roleList = roleRepository.findByIdIn(roles);
         user.setRoles(roleList);

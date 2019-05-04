@@ -18,11 +18,11 @@ public class User {
 	@Column(nullable = false)
 	private String departmentId;
 
-	@ManyToOne()
+	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "departmentId", referencedColumnName = "id", insertable = false, updatable = false)
 	private Department department;
 
-	@ManyToMany()
+	@ManyToMany(fetch = FetchType.EAGER)
 	@JoinTable(name = "User_Role", joinColumns = @JoinColumn(name = "UserId"), inverseJoinColumns = @JoinColumn(name = "RoleId"))
 	private List<Role> roles = new ArrayList<>();
 

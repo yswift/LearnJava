@@ -25,8 +25,22 @@
             </li>
         </ul>
         <ul class="navbar-nav justify-content-end">
-            <li class="nav-item active">
+            <li th:if="${!#authentication.isAuthenticated() || #authentication.name == 'anonymousUser'}" class="nav-item active">
                 <a class="nav-link" href="/" th:href="@{/login}">登录</a>
+            </li>
+            <li th:if="${#authentication.isAuthenticated() && #authentication.name != 'anonymousUser'}" class="nav-item dropdown">
+                <a th:text="${#authentication.name}" class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Dropdown
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a th:href="@{/account/changePassword}" class="dropdown-item" href="#">修改密码</a>
+                    <div class="dropdown-divider"></div>
+                    <a th:href="@{/logout}" class="dropdown-item" href="#">退出</a>
+                </div>
+            </li>
+            <li class="nav-item">
+<!--                占位符，防止弹出菜单超出屏幕，应该有其他处理方法 TODO pop menu out of screen-->
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             </li>
         </ul>
     </div>

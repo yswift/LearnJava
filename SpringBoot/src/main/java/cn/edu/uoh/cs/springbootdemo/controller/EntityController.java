@@ -8,7 +8,9 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import javax.annotation.security.RolesAllowed;
 import javax.servlet.http.HttpServletRequest;
 
 public abstract class EntityController<T, IdType> {
@@ -26,9 +28,9 @@ public abstract class EntityController<T, IdType> {
                         @RequestParam(name = "pageSize", defaultValue = "10") int pageSize) {
         Pageable pageable = PageRequest.of(pageNo, pageSize);
         Page<T> page = repository.findAll(pageable);
-        if (!StringUtil.isEmpty(msg)) {
-            model.addAttribute("msg", msg);
-        }
+//        if (!StringUtil.isEmpty(msg)) {
+//            model.addAttribute("msg", msg);
+//        }
         return page;
     }
 
@@ -42,10 +44,11 @@ public abstract class EntityController<T, IdType> {
 
     // create，edit都用此方法保存
     @PostMapping("save")
-    public String save(T entity, HttpServletRequest request) {
+    public String save(T entity, HttpServletRequest request, RedirectAttributes model) {
         repository.save(entity);
-        String msg = StringUtil.encodeValue("保存【" + entity + "】成功");
-        return "redirect:list?msg=" + msg;
+        String msg = "保存【" + entity + "】成功";
+        model.addFlashAttribute("msg", msg);
+        return "redirect:list";
     }
 
     @GetMapping("edit")
@@ -57,10 +60,11 @@ public abstract class EntityController<T, IdType> {
     }
 
     @GetMapping("delete/{id}")
-    public String delete(@PathVariable IdType id) {
+    public String delete(@PathVariable IdType id, RedirectAttributes model) {
         repository.deleteById(id);
-        String msg = StringUtil.encodeValue("删除【" + id + "】成功");
-        return "redirect:../list?msg=" + msg;
+        String msg = "删除【" + id + "】成功";
+        model.addFlashAttribute("msg", msg);
+        return "redirect:../list";
     }
 
     // 生成必要外键的列表，用于dropdown或checkbox选择
