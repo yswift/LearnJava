@@ -17,23 +17,23 @@ public class DeparmentController {
     @Autowired
     DepartmentRepository repository;
 
-    @GetMapping("list")
-    @ModelAttribute("page")
+    @GetMapping("list") // 映射到 /department/list，默认的view文件名也是：/department/list
+    @ModelAttribute("page") // 返回值的属性是 page
     public Page<Department> list(Model model, String msg,
                                  @RequestParam(name="pageNo", defaultValue = "0") int pageNo,
                                  @RequestParam(name="pageSize", defaultValue = "10") int pageSize) {
+        // 分页消息，默认第0页，每页10条数据
         Pageable pageable = PageRequest.of(pageNo, pageSize);
         Page<Department> page = repository.findAll(pageable);
+        // 增删改 会传递一条消息，用于显示
         if (!StringUtil.isEmpty(msg)) {
             model.addAttribute("msg", msg);
         }
-//        model.addAttribute("page", page);
         return page;
     }
 
     @GetMapping("create")
     public void create() {
-
     }
 
     // create，edit都用此方法保存
