@@ -6,9 +6,7 @@ import cn.edu.uoh.cs.springbootdemo.repository.DepartmentRepository;
 import cn.edu.uoh.cs.springbootdemo.repository.RoleRepository;
 import cn.edu.uoh.cs.springbootdemo.repository.UserRepository;
 import cn.edu.uoh.cs.springbootdemo.utils.SelectListItem;
-import javassist.NotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.crossstore.ChangeSetPersister;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
@@ -56,13 +54,16 @@ public class UserService {
         return false;
     }
 
+    // 获取部门列表，并把指定用户所属部门的selected设为true
     public List<SelectListItem> getDepartments(User user) {
         return departmentRepository.findAll()
                 .stream()
-                .map((d) -> new SelectListItem(d.getId(), d.getName(), user != null && d.getId().equals(user.getDepartmentId())))
+                .map((d) -> new SelectListItem(d.getId(), d.getName(),
+                        user != null && d.getId().equals(user.getDepartmentId())))
                 .collect(Collectors.toList());
     }
 
+    // 获取角色列表，并把用户拥有的角色的selected设为true
     public List<SelectListItem> getRoles(User user) {
         return roleRepository.findAll()
                 .stream()

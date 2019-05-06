@@ -19,7 +19,7 @@
         </ol>
     </nav>
     <form th:action="@{save}" th:object="${entity}" method="post">
-        <!--        引入spring security后需要安全码-->
+        <!--        引入spring security后需要安全码，已不用，thymeleaf 会自动生成 -->
 <!--        <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}">-->
         <div class="form-group row">
             <label for="id" class="col-md-2 col-form-label ">角色Id</label>

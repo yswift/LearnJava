@@ -1,6 +1,5 @@
 package cn.edu.uoh.cs.springbootdemo.controller;
 
-import cn.edu.uoh.cs.springbootdemo.utils.StringUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -10,15 +9,16 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-import javax.annotation.security.RolesAllowed;
 import javax.servlet.http.HttpServletRequest;
 
 public abstract class EntityController<T, IdType> {
     @Autowired
     protected JpaRepository<T, IdType> repository;
 
+    // 创建实体对象
     protected abstract T newInstance();
 
+    // 返回create，edit的视图名称
     protected abstract String getEditView();
 
     @GetMapping("list")
@@ -28,9 +28,6 @@ public abstract class EntityController<T, IdType> {
                         @RequestParam(name = "pageSize", defaultValue = "10") int pageSize) {
         Pageable pageable = PageRequest.of(pageNo, pageSize);
         Page<T> page = repository.findAll(pageable);
-//        if (!StringUtil.isEmpty(msg)) {
-//            model.addAttribute("msg", msg);
-//        }
         return page;
     }
 
