@@ -2,7 +2,7 @@
 # Reference: https://intellij-support.jetbrains.com/hc/en-us/articles/206544839
 
 #eclipse
-.metadata/.plugins/
+#.metadata/.plugins/
 .metadata/*.log
 .metadata/*.lock
 

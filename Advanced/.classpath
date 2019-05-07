@@ -12,6 +12,11 @@
 	<classpathentry kind="lib" path="/JavaLibs/lib/hibernate/javassist-3.20.0-GA.jar"/>
 	<classpathentry kind="lib" path="/JavaLibs/lib/hibernate/jboss-logging-3.3.0.Final.jar"/>
 	<classpathentry kind="lib" path="/JavaLibs/lib/hibernate/jboss-transaction-api_1.2_spec-1.0.0.Final.jar"/>
+	<classpathentry kind="lib" path="/JavaLibs/lib/log/commons-logging-1.2.jar"/>
+	<classpathentry kind="lib" path="/JavaLibs/lib/log/log4j-api-2.11.2.jar"/>
+	<classpathentry kind="lib" path="/JavaLibs/lib/log/log4j-core-2.11.2.jar"/>
+	<classpathentry kind="lib" path="/JavaLibs/lib/log/log4j-slf4j-impl-2.11.2.jar"/>
+	<classpathentry kind="lib" path="/JavaLibs/lib/log/slf4j-api-1.7.26.jar"/>
 	<classpathentry kind="lib" path="/JavaLibs/lib/jdbc/mysql-connector-java-8.0.15.jar"/>
 	<classpathentry kind="lib" path="/JavaLibs/lib/spring/commons-logging-1.2.jar"/>
 	<classpathentry kind="lib" path="/JavaLibs/lib/spring/spring-aop-5.1.6.RELEASE.jar"/>
@@ -26,10 +31,5 @@
 	<classpathentry kind="lib" path="/JavaLibs/lib/spring/spring-tx-5.1.6.RELEASE.jar"/>
 	<classpathentry kind="lib" path="/JavaLibs/lib/spring-data/javax.persistence-api-2.2.jar"/>
 	<classpathentry kind="lib" path="/JavaLibs/lib/spring-data/spring-data-jpa-2.1.6.RELEASE.jar"/>
-	<classpathentry kind="lib" path="/JavaLibs/lib/log/commons-logging-1.2.jar"/>
-	<classpathentry kind="lib" path="/JavaLibs/lib/log/log4j-api-2.11.2.jar"/>
-	<classpathentry kind="lib" path="/JavaLibs/lib/log/log4j-core-2.11.2.jar"/>
-	<classpathentry kind="lib" path="/JavaLibs/lib/log/log4j-slf4j-impl-2.11.2.jar"/>
-	<classpathentry kind="lib" path="/JavaLibs/lib/log/slf4j-api-1.7.26.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
