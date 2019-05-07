@@ -8,13 +8,13 @@
           <element id="module-output" name="SpringMvc" />
         </element>
         <element id="directory" name="lib">
-          <element id="dir-copy" path="$PROJECT_DIR$/lib/hibernate" />
-          <element id="dir-copy" path="$PROJECT_DIR$/lib/jdbc" />
-          <element id="dir-copy" path="$PROJECT_DIR$/lib/log" />
-          <element id="dir-copy" path="$PROJECT_DIR$/lib/spring" />
-          <element id="dir-copy" path="$PROJECT_DIR$/lib/spring-data" />
-          <element id="dir-copy" path="$PROJECT_DIR$/lib/spring-mvc" />
-          <element id="file-copy" path="$PROJECT_DIR$/lib/gson-2.8.5.jar" />
+          <element id="dir-copy" path="$PROJECT_DIR$/JavaLibs/lib/hibernate" />
+          <element id="dir-copy" path="$PROJECT_DIR$/JavaLibs/lib/jdbc" />
+          <element id="dir-copy" path="$PROJECT_DIR$/JavaLibs/lib/log" />
+          <element id="dir-copy" path="$PROJECT_DIR$/JavaLibs/lib/spring" />
+          <element id="dir-copy" path="$PROJECT_DIR$/JavaLibs/lib/spring-data" />
+          <element id="dir-copy" path="$PROJECT_DIR$/JavaLibs/lib/spring-mvc" />
+          <element id="file-copy" path="$PROJECT_DIR$/JavaLibs/lib/gson-2.8.5.jar" />
         </element>
       </element>
     </root>
