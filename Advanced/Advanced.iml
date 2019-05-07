@@ -46,7 +46,7 @@
     <orderEntry type="module-library">
       <library>
         <CLASSES>
-          <root url="jar://$MODULE_DIR$/../lib/gson-2.8.5.jar!/" />
+          <root url="jar://$MODULE_DIR$/../JavaLibs/lib/gson-2.8.5.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -55,51 +55,51 @@
     <orderEntry type="module-library">
       <library>
         <CLASSES>
-          <root url="file://$MODULE_DIR$/../lib/jdbc" />
+          <root url="file://$MODULE_DIR$/../JavaLibs/lib/hibernate" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
-        <jarDirectory url="file://$MODULE_DIR$/../lib/jdbc" recursive="false" />
+        <jarDirectory url="file://$MODULE_DIR$/../JavaLibs/lib/hibernate" recursive="false" />
       </library>
     </orderEntry>
     <orderEntry type="module-library">
       <library>
         <CLASSES>
-          <root url="file://$MODULE_DIR$/../lib/log" />
+          <root url="file://$MODULE_DIR$/../JavaLibs/lib/jdbc" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
-        <jarDirectory url="file://$MODULE_DIR$/../lib/log" recursive="false" />
+        <jarDirectory url="file://$MODULE_DIR$/../JavaLibs/lib/jdbc" recursive="false" />
       </library>
     </orderEntry>
     <orderEntry type="module-library">
       <library>
         <CLASSES>
-          <root url="file://$MODULE_DIR$/../lib/spring" />
+          <root url="file://$MODULE_DIR$/../JavaLibs/lib/log" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
-        <jarDirectory url="file://$MODULE_DIR$/../lib/spring" recursive="false" />
+        <jarDirectory url="file://$MODULE_DIR$/../JavaLibs/lib/log" recursive="false" />
       </library>
     </orderEntry>
     <orderEntry type="module-library">
       <library>
         <CLASSES>
-          <root url="file://$MODULE_DIR$/../lib/spring-data" />
+          <root url="file://$MODULE_DIR$/../JavaLibs/lib/spring" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
-        <jarDirectory url="file://$MODULE_DIR$/../lib/spring-data" recursive="false" />
+        <jarDirectory url="file://$MODULE_DIR$/../JavaLibs/lib/spring" recursive="false" />
       </library>
     </orderEntry>
     <orderEntry type="module-library">
       <library>
         <CLASSES>
-          <root url="file://$MODULE_DIR$/../lib/hibernate" />
+          <root url="file://$MODULE_DIR$/../JavaLibs/lib/spring-data" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
-        <jarDirectory url="file://$MODULE_DIR$/../lib/hibernate" recursive="false" />
+        <jarDirectory url="file://$MODULE_DIR$/../JavaLibs/lib/spring-data" recursive="false" />
       </library>
     </orderEntry>
   </component>
