@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <publish-info>
   <server id="Tomcat v9.0 Server at localhost" path="publish0.dat"/>
+  <server id="Tomcat v9.0 Server at localhost (2)" path="publish1.dat"/>
+  <server id="Java Web" path="publish3.dat"/>
+  <server id="Tomcat v9.0 Server at localhost (3)" path="publish2.dat"/>
   <server id="Tomcat v9.0 for JavaWeb" path="publish1.dat"/>
 </publish-info>

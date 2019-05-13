@@ -31,5 +31,7 @@
 	<classpathentry kind="lib" path="/JavaLibs/lib/spring/spring-tx-5.1.6.RELEASE.jar"/>
 	<classpathentry kind="lib" path="/JavaLibs/lib/spring-data/javax.persistence-api-2.2.jar"/>
 	<classpathentry kind="lib" path="/JavaLibs/lib/spring-data/spring-data-jpa-2.1.6.RELEASE.jar"/>
+	<classpathentry kind="lib" path="/JavaLibs/lib/junit/hamcrest-core-1.3.jar"/>
+	<classpathentry kind="lib" path="/JavaLibs/lib/junit/junit-4.12.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

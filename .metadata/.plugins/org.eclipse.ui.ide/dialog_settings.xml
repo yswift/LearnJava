@@ -1,17 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<section name="ExternalProjectImportWizard">
-		<item value="false" key="WizardProjectsImportPage.STORE_NESTED_PROJECTS"/>
-		<item value="false" key="WizardProjectsImportPage.STORE_COPY_PROJECT_ID"/>
-		<item value="false" key="WizardProjectsImportPage.STORE_ARCHIVE_SELECTED"/>
+		<item key="WizardProjectsImportPage.STORE_NESTED_PROJECTS" value="false"/>
+		<item key="WizardProjectsImportPage.STORE_COPY_PROJECT_ID" value="false"/>
+		<item key="WizardProjectsImportPage.STORE_ARCHIVE_SELECTED" value="false"/>
 		<list key="WizardProjectsImportPage.STORE_DIRECTORIES">
-			<item value="E:\Work\LearnJava\JavaLibs"/>
+			<item value="E:\Work\LearnJava\Jsp"/>
 			<item value="E:\Work\LearnJava\JavaWeb"/>
+			<item value="E:\Work\LearnJava\Advanced"/>
+			<item value="E:\Work\LearnJava\Basic"/>
+			<item value="E:\Work\LearnJava\JavaLibs"/>
 		</list>
 		<list key="WizardProjectsImportPage.STORE_ARCHIVES">
 			<item value=""/>
 		</list>
 	</section>
+	<section name="WORKBENCH_SETTINGS">
+		<list key="ENABLED_TRANSFERS">
+		</list>
+	</section>
 	<section name="NewWizardAction">
+	</section>
+	<section name="ChooseWorkspaceDialogSettings">
+		<item key="DIALOG_X_ORIGIN" value="651"/>
+		<item key="DIALOG_Y_ORIGIN" value="316"/>
+	</section>
+	<section name="CleanDialogSettings">
+		<item key="DIALOG_X_ORIGIN" value="710"/>
+		<item key="DIALOG_Y_ORIGIN" value="242"/>
+		<item key="DIALOG_WIDTH" value="500"/>
+		<item key="DIALOG_HEIGHT" value="417"/>
+		<item key="TOGGLE_SELECTED" value="false"/>
 	</section>
 </section>
