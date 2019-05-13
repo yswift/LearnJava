@@ -3,7 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Advanced/Advanced.iml" filepath="$PROJECT_DIR$/Advanced/Advanced.iml" />
-      <module fileurl="file://$PROJECT_DIR$/Advanced/Basic.iml" filepath="$PROJECT_DIR$/Advanced/Basic.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Basic/Basic.iml" filepath="$PROJECT_DIR$/Basic/Basic.iml" />
       <module fileurl="file://$PROJECT_DIR$/JavaWeb/JavaWeb.iml" filepath="$PROJECT_DIR$/JavaWeb/JavaWeb.iml" />
       <module fileurl="file://$PROJECT_DIR$/SpringMvc/SpringMvc.iml" filepath="$PROJECT_DIR$/SpringMvc/SpringMvc.iml" />
       <module fileurl="file://$PROJECT_DIR$/Zfxt/Zfxt.iml" filepath="$PROJECT_DIR$/Zfxt/Zfxt.iml" />
