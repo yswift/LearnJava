@@ -1,0 +1,252 @@
+﻿<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>web socket 聊天室</title>
+    <link rel="stylesheet" href="bootstrap.css">
+
+</head>
+<body>
+<div class="container">
+    <div class="row " style="padding-top:20px;">
+        <h3 class="text-center">websocket 聊天室</h3>
+        <div class="col-md-8">
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                    聊天内容
+                </div>
+                <div id="chat" class="panel-body" style="height: 500px;overflow-y:scroll;">
+                    <ul id="chat-content" class="media-list"/>
+                </div>
+                <div class="panel-footer">
+                    <form>
+                        <div class="input-group">
+                            <input type="text" id="msg" class="form-control" placeholder="输入消息" disabled required/>
+                            <span class="input-group-btn">
+                            <input id="btnSend" class="btn btn-info" type="submit" onclick="send(this)"
+                                   value="发送" disabled/>
+                        </span>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    在线用户
+                </div>
+                <div class="panel-body" style="height: 500px;overflow-y:scroll;">
+                    <ul id="users" class="media-list"/>
+
+                    </ul>
+                </div>
+
+                <div class="panel-footer">
+                    <form>
+                        <div class="input-group">
+                            <input type="text" id="nickname" class="form-control" placeholder="昵称" required/>
+                            <span class="input-group-btn">
+                                <input id="btnConnect" type="button" class="btn btn-info" value="连接"
+                                       onclick="connect(this)"/>
+                            </span>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--接收到消息的显示模板-->
+<div id="receivechat" class="hidden">
+    <li class="media">
+        <div class="media-body">
+            <div class="media">
+                <div class="nickname pull-left">
+                    Nick name
+                </div>
+                <div class="media-body">
+                    <div class="msg"></div>
+                    <br/>
+                    <small class="text-muted">Alex Deo | 23rd June at 5:00pm</small>
+                    <hr/>
+                </div>
+            </div>
+        </div>
+    </li>
+</div>
+
+<!--发送消息的显示模板-->
+<div id="mychat" class="hidden">
+    <li class="media">
+        <div class="media-body">
+            <div class="media">
+                <div class="nickname pull-right">
+                    Nick name
+                </div>
+                <div class="media-body">
+                    <div class="msg"></div>
+                    <br/>
+                    <small class="text-muted">Alex Deo | 23rd June at 5:00pm</small>
+                    <hr/>
+                </div>
+            </div>
+        </div>
+    </li>
+</div>
+
+<!--在线用户模板-->
+<div id="user" class="hidden">
+    <li class="media">
+        <div class="media-body">
+            <div class="media">
+                <div class="media-body">
+                    <h5></h5>
+                    <small class="text-muted"></small>
+                </div>
+            </div>
+        </div>
+    </li>
+</div>
+
+
+<script src="../static/jquery-3.4.0.min.js"></script>
+<script>
+    var websocket = null;
+
+    function connect(btn) {
+        // 检查昵称，如果空，显示出错信息
+        var form = $(btn).parents("form")[0];
+        // 验证
+        if (!form.checkValidity()) {
+            // 显示验证结果
+            form.reportValidity();
+            return;
+        }
+        if (btn.value === "连接") {
+            // 连接
+            websocket = new WebSocket("ws://localhost:8080/websocket");
+            websocket.onopen = onopen;
+            websocket.onclose = onclose;
+            websocket.onmessage = onmessage;
+        } else {
+            // 断开链接
+            if (websocket) {
+                websocket.close();
+            }
+        }
+    }
+
+    function send(btn) {
+        event.preventDefault();
+        // 检查消息，如果空，显示出错信息
+        var form = $(btn).parents("form")[0];
+        if (!form.checkValidity()) {
+            form.reportValidity();
+            return;
+        }
+        // 获得用户输入
+        var msg = $("#msg").val();
+        if (!msg) {
+            return;
+        }
+        $("#msg").val("");
+        showMyMsg(msg);
+        // 设置消息
+        websocket.send(JSON.stringify({
+            type: "Msg",
+            nickname: $("#nickname").val(),
+            msg: msg
+        }));
+    }
+
+    function onopen(event) {
+        $("#nickname").attr("readonly", "readonly");
+        $("#btnConnect").val("断开");
+        $("#msg").removeAttr("disabled");
+        $("#btnSend").removeAttr("disabled");
+        // 发送连接消息
+        websocket.send(JSON.stringify({
+            type: "Connection",
+            nickname: $("#nickname").val(),
+        }));
+    }
+
+    function onclose(event) {
+        var usersnode = $("#users");
+        usersnode.empty();
+
+        $("#nickname").removeAttr("readonly");
+        $("#btnConnect").val("连接");
+        $("#msg").attr("disabled", "disabled");
+        $("#btnSend").attr("disabled", "disabled");
+    }
+
+    function onmessage(event) {
+        var data = JSON.parse(event.data);
+        showReceiveMsg(data);
+        showUsers(data.users);
+    }
+
+    function showMyMsg(msg) {
+        var chatnode = $($("#mychat").html());
+        var nickname = $("#nickname").val();
+        showMsg(chatnode, nickname, msg);
+    }
+
+    function showReceiveMsg(data) {
+        var chatnode = $($("#receivechat").html());
+        showMsg(chatnode, data.nickname, data.msg);
+    }
+
+    function showMsg(chatnode, nickname, msg) {
+        chatnode.find(".nickname").text(nickname);
+        chatnode.find(".msg").text(msg);
+        chatnode.find(".text-muted").text(new Date().format("hh:mm:ss"));
+        // 添加到聊天窗口
+        var chatContent = $("#chat-content");
+        chatContent.append(chatnode);
+        // 滚动到底部
+        var chatdiv = document.getElementById('chat');
+        chatdiv.scrollTop = chatdiv.scrollHeight
+    }
+
+    function showUsers(users) {
+        if (users.length < 1) {
+            return;
+        }
+        var usersnode = $("#users");
+        usersnode.empty();
+        for (var i = 0; i < users.length; i++) {
+            var un = $($("#user").html());
+            un.removeAttr("id");
+            un.removeClass("hidden");
+            un.find("h5").text(users[i]);
+            usersnode.append(un);
+        }
+    }
+
+
+    Date.prototype.format = function (fmt) {
+        var o = {
+            "M+": this.getMonth() + 1,                 //月份
+            "d+": this.getDate(),                    //日
+            "h+": this.getHours(),                   //小时
+            "m+": this.getMinutes(),                 //分
+            "s+": this.getSeconds(),                 //秒
+            "q+": Math.floor((this.getMonth() + 3) / 3), //季度
+            "S": this.getMilliseconds()             //毫秒
+        };
+        if (/(y+)/.test(fmt)) {
+            fmt = fmt.replace(RegExp.$1, (this.getFullYear() + "").substr(4 - RegExp.$1.length));
+        }
+        for (var k in o) {
+            if (new RegExp("(" + k + ")").test(fmt)) {
+                fmt = fmt.replace(RegExp.$1, (RegExp.$1.length == 1) ? (o[k]) : (("00" + o[k]).substr(("" + o[k]).length)));
+            }
+        }
+        return fmt;
+    }
+</script>
+</body>
+</html>

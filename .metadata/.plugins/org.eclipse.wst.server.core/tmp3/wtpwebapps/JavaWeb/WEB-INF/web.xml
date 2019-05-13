@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
+         version="4.0">
+    <servlet>
+        <servlet-name>H1Servlet</servlet-name>
+        <servlet-class>javaweb.H1Servlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>H1Servlet</servlet-name>
+        <url-pattern>/h1</url-pattern>
+    </servlet-mapping>
+
+<jsp-config>
+    <!--解决普通html文件内容乱码问题，html文件也使用utf8编码-->
+    <jsp-property-group>
+        <description>html encoding</description>
+        <display-name>JSPConfiguration</display-name>
+        <url-pattern>*.html</url-pattern>
+        <el-ignored>true</el-ignored>
+        <page-encoding>UTF-8</page-encoding>
+        <scripting-invalid>false</scripting-invalid>
+    </jsp-property-group>
+</jsp-config>
+</web-app>
