@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <module external.linked.project.id="Gradle4Web" external.linked.project.path="$MODULE_DIR$/../../Gradle4Web" external.root.project.path="$MODULE_DIR$/../../Gradle4Web" external.system.id="GRADLE" external.system.module.group="" external.system.module.version="1.0-SNAPSHOT" type="JAVA_MODULE" version="4">
-  <component name="ExternalSystem" linkedProjectPath="$MODULE_DIR$/../../Gradle4Web" rootProjectPath="$MODULE_DIR$/../../Gradle4Web" />
+  <component name="ExternalSystem" externalSystem="GRADLE" externalSystemModuleGroup="" externalSystemModuleVersion="1.0-SNAPSHOT" linkedProjectId="Gradle4Web" linkedProjectPath="$MODULE_DIR$/../../Gradle4Web" rootProjectPath="$MODULE_DIR$/../../Gradle4Web" />
   <component name="FacetManager">
     <facet type="web" name="Web Gradle : Gradle4Web-1.0-SNAPSHOT.war">
       <configuration>
@@ -8,7 +8,6 @@
           <root url="file://E:\Work\LearnJava\Gradle4Web\src\main\webapp" relative="/" />
         </webroots>
         <sourceRoots>
-          <root url="file://$MODULE_DIR$/../../Gradle4Web/src/main/resources" />
           <root url="file://$MODULE_DIR$/../../Gradle4Web/src/main/java" />
         </sourceRoots>
       </configuration>
@@ -21,8 +20,6 @@
     <content url="file://$MODULE_DIR$/../../Gradle4Web">
       <sourceFolder url="file://$MODULE_DIR$/../../Gradle4Web/src/main/java" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../Gradle4Web/src/test/java" isTestSource="true" />
-      <sourceFolder url="file://$MODULE_DIR$/../../Gradle4Web/src/main/resources" type="java-resource" />
-      <sourceFolder url="file://$MODULE_DIR$/../../Gradle4Web/src/test/resources" type="java-test-resource" />
       <excludeFolder url="file://$MODULE_DIR$/../../Gradle4Web/.gradle" />
       <excludeFolder url="file://$MODULE_DIR$/../../Gradle4Web/build" />
       <excludeFolder url="file://$MODULE_DIR$/../../Gradle4Web/out" />
