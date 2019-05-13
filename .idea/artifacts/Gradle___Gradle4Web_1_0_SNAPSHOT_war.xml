@@ -1,0 +1,11 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="Gradle : Gradle4Web-1.0-SNAPSHOT.war">
+    <output-path>$PROJECT_DIR$/Gradle4Web/build/libs</output-path>
+    <properties id="gradle-properties">
+      <options external-project-path="$PROJECT_DIR$/Gradle4Web" />
+    </properties>
+    <root id="archive" name="Gradle4Web-1.0-SNAPSHOT.war">
+      <element id="artifact" artifact-name="Gradle : Gradle4Web-1.0-SNAPSHOT.war (exploded)" />
+    </root>
+  </artifact>
+</component>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module external.linked.project.id="Gradle4Web" external.linked.project.path="$MODULE_DIR$/../../Gradle4Web" external.root.project.path="$MODULE_DIR$/../../Gradle4Web" external.system.id="GRADLE" external.system.module.group="" external.system.module.version="1.0-SNAPSHOT" type="JAVA_MODULE" version="4">
+  <component name="ExternalSystem" linkedProjectPath="$MODULE_DIR$/../../Gradle4Web" rootProjectPath="$MODULE_DIR$/../../Gradle4Web" />
+  <component name="FacetManager">
+    <facet type="web" name="Web Gradle : Gradle4Web-1.0-SNAPSHOT.war">
+      <configuration>
+        <webroots>
+          <root url="file://E:\Work\LearnJava\Gradle4Web\src\main\webapp" relative="/" />
+        </webroots>
+        <sourceRoots>
+          <root url="file://$MODULE_DIR$/../../Gradle4Web/src/main/resources" />
+          <root url="file://$MODULE_DIR$/../../Gradle4Web/src/main/java" />
+        </sourceRoots>
+      </configuration>
+    </facet>
+  </component>
+  <component name="NewModuleRootManager">
+    <output url="file://$MODULE_DIR$/../../Gradle4Web/out/production/classes" />
+    <output-test url="file://$MODULE_DIR$/../../Gradle4Web/out/test/classes" />
+    <exclude-output />
+    <content url="file://$MODULE_DIR$/../../Gradle4Web">
+      <sourceFolder url="file://$MODULE_DIR$/../../Gradle4Web/src/main/java" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../Gradle4Web/src/test/java" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../../Gradle4Web/src/main/resources" type="java-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/../../Gradle4Web/src/test/resources" type="java-test-resource" />
+      <excludeFolder url="file://$MODULE_DIR$/../../Gradle4Web/.gradle" />
+      <excludeFolder url="file://$MODULE_DIR$/../../Gradle4Web/build" />
+      <excludeFolder url="file://$MODULE_DIR$/../../Gradle4Web/out" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" scope="TEST" name="Gradle: junit:junit:4.12" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: org.hamcrest:hamcrest-core:1.3" level="project" />
+  </component>
+</module>

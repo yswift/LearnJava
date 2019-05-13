@@ -1,0 +1,22 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="Gradle : Gradle4Web-1.0-SNAPSHOT.war (exploded)">
+    <output-path>$PROJECT_DIR$/Gradle4Web/build/libs/exploded/Gradle4Web-1.0-SNAPSHOT.war</output-path>
+    <properties id="gradle-properties">
+      <options external-project-path="$PROJECT_DIR$/Gradle4Web">
+        <manifest>TWFuaWZlc3QtVmVyc2lvbjogMS4wDQoNCg==</manifest>
+      </options>
+    </properties>
+    <root id="root">
+      <element id="directory" name="META-INF">
+        <element id="file-copy" path="$PROJECT_DIR$/Gradle4Web/build/libs/exploded/Gradle4Web-1.0-SNAPSHOT.war/META-INF/MANIFEST.MF" />
+      </element>
+      <element id="javaee-facet-resources" facet="Gradle4Web/web/Web Gradle : Gradle4Web-1.0-SNAPSHOT.war" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="Gradle4Web" />
+          <element id="dir-copy" path="$PROJECT_DIR$/Gradle4Web/out/production/resources" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>
