@@ -125,7 +125,9 @@
         }
         if (btn.value === "连接") {
             // 连接
-            websocket = new WebSocket("ws://localhost:8080/websocket");
+            var url = "ws://" + location.hostname + ":" + location.port + "/websocket";
+            // websocket = new WebSocket("ws://localhost:8080/websocket");
+            websocket = new WebSocket(url);
             websocket.onopen = onopen;
             websocket.onclose = onclose;
             websocket.onmessage = onmessage;
