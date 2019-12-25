@@ -147,7 +147,7 @@ public class AccountTools {
             throw new IllegalArgumentException("必须先登陆，才能获取课表");
         }
         return userType == UserType学生
-                ? null
+                ? new StudentCourseFetcher(userId, userName, cookie)
                 : new TeacherCourseFetcher(userId, userName, cookie);
     }
 
@@ -156,7 +156,7 @@ public class AccountTools {
             throw new IllegalArgumentException("必须先登陆，才能获取考试/监考表");
         }
         return userType == UserType学生
-                ? null
+                ? new StudentExamFetcher(userId, userName, cookie)
                 : new TeacherExamFetcher(userId, userName, cookie);
     }
 
