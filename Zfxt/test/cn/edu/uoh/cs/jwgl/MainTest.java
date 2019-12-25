@@ -21,6 +21,7 @@ public class MainTest {
     private JTextArea txtInfo;
     private JLabel lblCode;
     private JPanel mainPanel;
+    private JButton btnScore;
     AccountTools tools = new AccountTools();
 
 
@@ -34,6 +35,9 @@ public class MainTest {
         });
         btnExam.addActionListener((e) -> {
             fetchExam();
+        });
+        btnScore.addActionListener((e) -> {
+            fetchScore();
         });
     }
 
@@ -84,6 +88,17 @@ public class MainTest {
         }
     }
 
+    void fetchScore() {
+        try {
+            StudentScoreFetcher fetcher = tools.createScoreFetcher();
+            String html = fetcher.fetch();
+            txtInfo.setText(html);
+        } catch (IOException e) {
+            txtInfo.setText(e.getMessage());
+            e.printStackTrace();
+        }
+    }
+
     void showInfo(List list) {
         StringBuilder sb = new StringBuilder();
         for (Object o : list) {
@@ -94,6 +109,7 @@ public class MainTest {
 
     public static void main(String[] args) throws IOException {
         JFrame frame = new JFrame("MainTest");
+        frame.setLocationRelativeTo(null);
         frame.setContentPane(new MainTest().mainPanel);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.pack();

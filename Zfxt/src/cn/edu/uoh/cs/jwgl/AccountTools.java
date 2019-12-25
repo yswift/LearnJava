@@ -58,24 +58,21 @@ public class AccountTools {
         return HttpHelper.readToEnd(http.getInputStream());
     }
 
-
-    private Map<String, String> getHiddenInput(String html) {
+    private Map<String, String> creatParameter(String code) throws IOException {
+        String html = HttpHelper.getHtml(JwglUrl.HOST, cookie, "", JwglUrl.Encoding);
+        // 获取隐藏参数
         Document doc = Jsoup.parse(html);
         Elements es = doc.select("input[type=hidden]");
-        HashMap<String, String> hidden = new HashMap<>();
+        HashMap<String, String> requestParameter = new HashMap<>();
         for (Element e : es) {
-            hidden.put(e.attr("name"), e.val());
+            requestParameter.put(e.attr("name"), e.val());
         }
         // 其它参数
         String[] pns = {"Button1", "lbLanguage"};
         for (String pn : pns) {
             String v = doc.select("#" + pn).val();
-            hidden.put(pn, v);
+            requestParameter.put(pn, v);
         }
-        return hidden;
-    }
-
-    private void addRequestParameter(Map<String, String> requestParameter, String code) {
         // 教工号
         requestParameter.put("txtUserName", userId);
         // 密码
@@ -84,28 +81,7 @@ public class AccountTools {
         requestParameter.put("txtSecretCode", code);
         // 身份,教师/学生
         requestParameter.put("RadioButtonList1", userType);
-    }
-
-    private String buildParameter(Map<String, String> requestParameter) throws UnsupportedEncodingException {
-        // 获取URLConnection对象对应的输出流
-        StringBuilder sb = new StringBuilder();
-        for (Map.Entry<String, String> p : requestParameter.entrySet()) {
-            sb.append(p.getKey());
-            sb.append("=");
-            sb.append(URLEncoder.encode(p.getValue(), JwglUrl.Encoding));
-            sb.append("&");
-        }
-        return sb.substring(0, sb.length() - 1);
-    }
-
-    private void parseName(String html) {
-        userName = Jsoup.parse(html).getElementById("xhxm").text();
-        Pattern namePattern = Pattern.compile("(.+)老师");
-        Matcher m = namePattern.matcher(userName);
-        if (m.matches()) {
-            userName = m.group(1);
-        }
-        System.out.println("欢迎你, " + userName);
+        return requestParameter;
     }
 
     private void saveHtmlToFile(String fn, String html) throws IOException {
@@ -121,38 +97,10 @@ public class AccountTools {
      * @throws Exception
      */
     public boolean login(String code) throws IOException {
-        String html = HttpHelper.getHtml(JwglUrl.HOST, cookie, "", JwglUrl.Encoding);
-        // 获取隐藏参数
-        Map<String, String> requestParameter = getHiddenInput(html);
-        // 添加登陆参数
-        addRequestParameter(requestParameter, code);
-
-        String parameter = buildParameter(requestParameter);
-        System.out.println("Post");
-        System.out.println(parameter);
-
-        URL url = new URL(JwglUrl.LOGIN_URL);
-        // 打开和URL之间的连接
-        HttpURLConnection http = (HttpURLConnection) url.openConnection();
-        //设置参数
-        http.setDoOutput(true);  //需要输出
-        http.setDoInput(true);   //需要输入
-        http.setUseCaches(false);   //不允许缓存
-        http.setRequestMethod("POST");   //设置POST方式连接
-        //设置请求属性
-        http.setRequestProperty("Content-Length", String.valueOf(parameter.length()));
-        http.setRequestProperty("Content-Type", "application/x-www-form-urlencoded; charset=GB2312");
-        http.setRequestProperty("Connection", "Keep-Alive");// 维持长连接
-        http.setRequestProperty("Cookie", cookie);
-        //不重定向
-        http.setInstanceFollowRedirects(false);
-        http.connect();
-
-        OutputStream os = http.getOutputStream();
-        os.write(parameter.getBytes(JwglUrl.Encoding));
-        os.flush();
-        os.close();
-
+        // 获取,添加登陆参数
+        Map<String, String> requestParameter = creatParameter(code);
+        // post 请求
+        HttpURLConnection http = HttpHelper.doPost(JwglUrl.LOGIN_URL, null, requestParameter, cookie);
         // 根据ResponseCode判断连接是否成功
         int responseCode = http.getResponseCode();
         System.out.println("responseCode = " + responseCode);
@@ -160,18 +108,20 @@ public class AccountTools {
         if (responseCode != 302) {
             System.out.println("登录失败！");
             InputStream is = http.getInputStream();
-            html = HttpHelper.readToEnd(is, JwglUrl.Encoding);
+            String html = HttpHelper.readToEnd(is, JwglUrl.Encoding);
             saveHtmlToFile("e:\\r.html", html);
             isLogin = false;
             return isLogin;
         }
         // 如果提交成功，带着Cookie请求重定向的main页面，并获取教师/学生姓名
         try {
-            // TODO 这里是或教师名字的，如果是学生，要修改url
-            String mainUrl = JwglUrl.MAIN_URL + userId;
-            html = HttpHelper.getHtml(mainUrl, cookie, JwglUrl.LOGIN_URL, JwglUrl.Encoding);
-            parseName(html);
-            saveHtmlToFile("e:\\r2.html", html);
+            if (userType == UserType教师) {
+                String mainUrl = JwglUrl.JS_MAIN_URL + userId;
+                fetchName(mainUrl, "(.+)老师");
+            } else {
+                String mainUrl = JwglUrl.XS_MAIN_URL + userId;
+                fetchName(mainUrl, "(.+)同学");
+            }
             isLogin = true;
             return isLogin;
         } catch (Exception e) {
@@ -180,13 +130,25 @@ public class AccountTools {
         }
     }
 
+    void fetchName(String url, String pattern) throws IOException {
+        String html = HttpHelper.getHtml(url, cookie, JwglUrl.LOGIN_URL, JwglUrl.Encoding);
+        saveHtmlToFile("e:\\r2.html", html);
+        userName = Jsoup.parse(html).getElementById("xhxm").text();
+        Pattern namePattern = Pattern.compile(pattern);
+        Matcher m = namePattern.matcher(userName);
+        if (m.matches()) {
+            userName = m.group(1);
+        }
+        System.out.println("欢迎你, " + userName);
+    }
+
     public CourseFetcher createCourseFetcher() {
         if (!isLogin) {
             throw new IllegalArgumentException("必须先登陆，才能获取课表");
         }
         return userType == UserType学生
                 ? null
-                : new TeacherCourseFetcher(userId, userName,cookie);
+                : new TeacherCourseFetcher(userId, userName, cookie);
     }
 
     public ExamFetcher createExamFetcher() {
@@ -195,6 +157,10 @@ public class AccountTools {
         }
         return userType == UserType学生
                 ? null
-                : new TeacherExamFetcher(userId, userName,cookie);
+                : new TeacherExamFetcher(userId, userName, cookie);
+    }
+
+    public StudentScoreFetcher createScoreFetcher() {
+        return new StudentScoreFetcher(userId, userName, cookie);
     }
 }
