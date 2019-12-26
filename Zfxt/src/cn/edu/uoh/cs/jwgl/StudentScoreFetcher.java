@@ -19,11 +19,8 @@ public class StudentScoreFetcher extends Fetcher {
 
     public StudentScoreFetcher(String userId, String userName, String cookie) {
         super(userId, userName, cookie);
-//        url = JwglUrl.HOST + "xscjcx.aspx?xh="+ userId + "&xm=" + "%u5411%u4e39%u4e39" + "&gnmkdm=N121617";
         url = JwglUrl.HOST + "xscjcx.aspx?xh="+ userId + "&xm=" + userName + "&gnmkdm=N121617";
     }
-
-
 
     public String fetch() throws IOException {
         Map<String, String> parameter = createParameter();
@@ -46,7 +43,7 @@ public class StudentScoreFetcher extends Fetcher {
     // 获取，添加请求参数，返回构造好的请求参数
     private Map<String, String> createParameter() throws IOException {
         // 先使用 get 方法读取url， 获取 __VIEWSTATE 的值
-        // post 请求参数
+        // 以及添加 post 请求参数
         Map<String, String> parameter = new HashMap<>();
 
         String html = HttpHelper.getHtml(url, cookie, JwglUrl.HOST, JwglUrl.Encoding);

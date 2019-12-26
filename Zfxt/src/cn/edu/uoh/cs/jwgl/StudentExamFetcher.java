@@ -22,8 +22,7 @@ public class StudentExamFetcher extends ExamFetcher {
 
         // 上级url
         String mainUrl = JwglUrl.HOST + "xs_main.aspx?xh=" + userId;
-//        String html = HttpHelper.getHtml(url, cookie, mainUrl, JwglUrl.Encoding);
-        String html = HttpHelper.getHtml(url, cookie, url, JwglUrl.Encoding);
+        String html = HttpHelper.getHtml(url, cookie, mainUrl, JwglUrl.Encoding);
         System.out.println("学生考试查询: " + html);
 
         Document doc = Jsoup.parse(html);

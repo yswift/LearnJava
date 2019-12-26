@@ -32,7 +32,9 @@ public class StudentCourseFetcher extends CourseFetcher {
         System.out.println("学生课表url:" + url);
 
         // 上级url
-        String html = HttpHelper.getHtml(url, cookie, url, JwglUrl.Encoding);
+        String mainUrl = JwglUrl.HOST + "xs_main.aspx?xh=" + userId;
+        // 获取课表
+        String html = HttpHelper.getHtml(url, cookie, mainUrl, JwglUrl.Encoding);
 
         Document doc = Jsoup.parse(html);
         Elements rows = doc.select("#Table1 tbody").get(0).children();
@@ -82,7 +84,7 @@ public class StudentCourseFetcher extends CourseFetcher {
         }
     }
 
-    // TODO 测试
+    // TODO 未经过测试，不知道是否正确
     boolean have5(String week, int snum) {
         // 如果有第5节课，并且三节连上，6，7节课要特殊处理
         // 判断是否已有 周week，的第snum节课，如果有返回true
