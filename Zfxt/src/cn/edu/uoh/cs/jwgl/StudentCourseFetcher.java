@@ -56,6 +56,12 @@ public class StudentCourseFetcher extends CourseFetcher {
         return lessons;
     }
 
+    /**
+     * 获取课表中的一行数据
+     * @param scol 从第scol列开始处理
+     * @param snum 现在处理的是第snum节课，
+     * @param cols html格式的列的列表
+     */
     void fetchRow(int scol, int snum, Elements cols) {
         for (int i=scol, len=Math.min(scol+7, cols.size()), week=i-scol; i<len; i++, week++) {
             String s = cols.get(i).html();
