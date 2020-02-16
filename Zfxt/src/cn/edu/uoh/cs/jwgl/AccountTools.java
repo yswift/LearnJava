@@ -53,14 +53,35 @@ public class AccountTools {
     public byte[] getSecretCode() throws IOException {
         URL url = new URL(JwglUrl.SECRET_CODE_URL);
         HttpURLConnection http = (HttpURLConnection) url.openConnection();
+        http.setConnectTimeout(1000);
+        http.setReadTimeout(1000);
         // 获取返回的Cookie
         cookie = http.getHeaderField("Set-Cookie");
         return HttpHelper.readToEnd(http.getInputStream());
     }
 
+<<<<<<< HEAD
+    /**
+     * 识别验证码
+     * @param img 验证码图像
+     * @return 验证码
+     * @throws IOException
+     */
+    public String verifyCode(byte[] img) throws IOException {
+        String res = HttpHelper.postBase64(JwglUrl.VERIFY_CODE, img);
+        System.out.println("res="+res);
+        Pattern p = Pattern.compile("\"code\":\"(.{4})\"");
+        Matcher m = p.matcher(res);
+        return m.find() ? m.group(1) : "";
+    }
+
+
+    private Map<String, String> getHiddenInput(String html) {
+=======
     private Map<String, String> creatParameter(String code) throws IOException {
         String html = HttpHelper.getHtml(JwglUrl.HOST, cookie, "", JwglUrl.Encoding);
         // 获取隐藏参数
+>>>>>>> 48130507f5ffaddf6c5b88dcd940cd6887ab80dc
         Document doc = Jsoup.parse(html);
         Elements es = doc.select("input[type=hidden]");
         HashMap<String, String> requestParameter = new HashMap<>();
