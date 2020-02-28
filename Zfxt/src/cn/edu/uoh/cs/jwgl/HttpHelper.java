@@ -1,16 +1,11 @@
 package cn.edu.uoh.cs.jwgl;
 
-<<<<<<< HEAD
-import sun.misc.BASE64Encoder;
-
 import java.io.*;
 import java.net.*;
-=======
-import java.io.*;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.net.URLEncoder;
->>>>>>> 48130507f5ffaddf6c5b88dcd940cd6887ab80dc
+import java.util.Base64;
 import java.util.Map;
 import java.util.zip.GZIPInputStream;
 
@@ -42,7 +37,6 @@ public class HttpHelper {
         return bos.toByteArray();
     }
 
-<<<<<<< HEAD
     public static String postBase64(String urls, byte[] img) throws IOException {
         URL uurl = new URL(urls);
         URLConnection urlc = uurl.openConnection();
@@ -60,8 +54,8 @@ public class HttpHelper {
         // 获取URLConnection对象对应的输出流
         OutputStreamWriter  out = new OutputStreamWriter (urlc.getOutputStream());
         // 发送请求参数
-        BASE64Encoder encoder = new BASE64Encoder();
-        String code = encoder.encode(img);
+        Base64.Encoder encoder = Base64.getEncoder();
+        String code = encoder.encodeToString(img);
         out.write("base64=");
         out.write(URLEncoder.encode(code, "UTF-8"));
         // flush输出流的缓冲
@@ -92,7 +86,7 @@ public class HttpHelper {
         // 设置请求头参数
         conn.setRequestProperty("connection", "Keep-Alive");
         conn.setRequestProperty("Charsert", "UTF-8");
-        conn.setRequestProperty("Content-Type", "multipart/form-data; boundary="+BOUNDARY);
+        conn.setRequestProperty("Content-Type", "multipart/form-data; boundary=" + BOUNDARY);
 
         OutputStream out = conn.getOutputStream();
 
@@ -123,7 +117,8 @@ public class HttpHelper {
         out.close();
 
         return readToEnd(conn.getInputStream(), "UTF-8");
-=======
+    }
+
     public static HttpURLConnection doPost(String url, String referer, Map<String, String> requestParameter, String cookie) throws IOException {
         URL uurl = new URL(url);
         // 打开和URL之间的连接
@@ -164,7 +159,6 @@ public class HttpHelper {
             sb.append("&");
         }
         return sb.substring(0, sb.length() - 1);
->>>>>>> 48130507f5ffaddf6c5b88dcd940cd6887ab80dc
     }
 
 }

@@ -60,7 +60,6 @@ public class AccountTools {
         return HttpHelper.readToEnd(http.getInputStream());
     }
 
-<<<<<<< HEAD
     /**
      * 识别验证码
      * @param img 验证码图像
@@ -76,18 +75,21 @@ public class AccountTools {
     }
 
 
-    private Map<String, String> getHiddenInput(String html) {
-=======
-    private Map<String, String> creatParameter(String code) throws IOException {
-        String html = HttpHelper.getHtml(JwglUrl.HOST, cookie, "", JwglUrl.Encoding);
+    private HashMap<String, String> getHiddenInput(Document doc) {
         // 获取隐藏参数
->>>>>>> 48130507f5ffaddf6c5b88dcd940cd6887ab80dc
-        Document doc = Jsoup.parse(html);
         Elements es = doc.select("input[type=hidden]");
         HashMap<String, String> requestParameter = new HashMap<>();
         for (Element e : es) {
             requestParameter.put(e.attr("name"), e.val());
         }
+        return requestParameter;
+    }
+
+    private Map<String, String> creatParameter(String code) throws IOException {
+        String html = HttpHelper.getHtml(JwglUrl.HOST, cookie, "", JwglUrl.Encoding);
+        Document doc = Jsoup.parse(html);
+        // 获取隐藏参数
+        HashMap<String, String> requestParameter = getHiddenInput(doc);
         // 其它参数
         String[] pns = {"Button1", "lbLanguage"};
         for (String pn : pns) {

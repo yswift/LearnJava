@@ -1,19 +1,14 @@
 package io;
 
-import java.io.FileNotFoundException;
+import io.txtfile.TxtFile;
+
 import java.io.IOException;
 import java.io.RandomAccessFile;
-import java.io.UnsupportedEncodingException;
 import java.nio.ByteBuffer;
 import java.nio.CharBuffer;
 import java.nio.channels.FileChannel;
 import java.nio.charset.Charset;
 import java.nio.charset.CharsetDecoder;
-import java.util.Arrays;
-
-import javax.xml.bind.DatatypeConverter;
-
-import io.txtfile.TxtFile;
 
 public class ReadFile {
 	static void readFile(String fileName, String charset) throws IOException {

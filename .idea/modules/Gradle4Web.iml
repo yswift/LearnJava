@@ -5,7 +5,7 @@
     <facet type="web" name="Web Gradle : Gradle4Web-1.0-SNAPSHOT.war">
       <configuration>
         <webroots>
-          <root url="file://E:\Work\LearnJava\Gradle4Web\src\main\webapp" relative="/" />
+          <root url="file://D:\Work\LearnJava\Gradle4Web\src\main\webapp" relative="/" />
         </webroots>
         <sourceRoots>
           <root url="file://$MODULE_DIR$/../../Gradle4Web/src/main/java" />
@@ -14,8 +14,8 @@
     </facet>
   </component>
   <component name="NewModuleRootManager">
-    <output url="file://$MODULE_DIR$/../../Gradle4Web/out/production/classes" />
-    <output-test url="file://$MODULE_DIR$/../../Gradle4Web/out/test/classes" />
+    <output url="file://$MODULE_DIR$/../../Gradle4Web/build/classes/java/main" />
+    <output-test url="file://$MODULE_DIR$/../../Gradle4Web/build/classes/java/test" />
     <exclude-output />
     <content url="file://$MODULE_DIR$/../../Gradle4Web">
       <sourceFolder url="file://$MODULE_DIR$/../../Gradle4Web/src/main/java" isTestSource="false" />

@@ -43,6 +43,8 @@ public class MainTest {
 
     void init() throws IOException {
         byte[] buf = tools.getSecretCode();
+        String code = tools.verifyCode(buf);
+        txtCode.setText(code);
         Image img = Toolkit.getDefaultToolkit().createImage(buf);
         lblCode.setIcon(new ImageIcon(img));
     }
