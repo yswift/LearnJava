@@ -14,10 +14,18 @@
         </sourceRoots>
       </configuration>
     </facet>
+    <facet type="jpa" name="JPA">
+      <configuration>
+        <setting name="validation-enabled" value="true" />
+        <setting name="provider-name" value="Hibernate" />
+        <datasource-mapping />
+        <naming-strategy-map />
+      </configuration>
+    </facet>
   </component>
   <component name="NewModuleRootManager">
-    <output url="file://$MODULE_DIR$/../../SpringBoot/out/production/classes" />
-    <output-test url="file://$MODULE_DIR$/../../SpringBoot/out/test/classes" />
+    <output url="file://$MODULE_DIR$/../../SpringBoot/build/classes/java/main" />
+    <output-test url="file://$MODULE_DIR$/../../SpringBoot/build/classes/java/test" />
     <exclude-output />
     <content url="file://$MODULE_DIR$/../../SpringBoot">
       <sourceFolder url="file://$MODULE_DIR$/../../SpringBoot/src/main/java" isTestSource="false" />

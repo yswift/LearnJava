@@ -8,12 +8,10 @@
     <content url="file://$MODULE_DIR$/../../Gradle4Java">
       <sourceFolder url="file://$MODULE_DIR$/../../Gradle4Java/src/main/java" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../Gradle4Java/src/test/java" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../../Gradle4Java/build/generated/sources/annotationProcessor/java/main" isTestSource="false" generated="true" />
       <excludeFolder url="file://$MODULE_DIR$/../../Gradle4Java/.gradle" />
       <excludeFolder url="file://$MODULE_DIR$/../../Gradle4Java/build" />
       <excludeFolder url="file://$MODULE_DIR$/../../Gradle4Java/out" />
-    </content>
-    <content url="file://$MODULE_DIR$/../../Gradle4Java/build/generated/sources/annotationProcessor/java/main">
-      <sourceFolder url="file://$MODULE_DIR$/../../Gradle4Java/build/generated/sources/annotationProcessor/java/main" isTestSource="false" generated="true" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

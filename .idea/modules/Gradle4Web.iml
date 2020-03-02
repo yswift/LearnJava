@@ -5,7 +5,7 @@
     <facet type="web" name="Web Gradle : Gradle4Web-1.0-SNAPSHOT.war">
       <configuration>
         <webroots>
-          <root url="file://D:\Work\LearnJava\Gradle4Web\src\main\webapp" relative="/" />
+          <root url="file://$MODULE_DIR$/../../Gradle4Web/src/main/webapp" relative="/" />
         </webroots>
         <sourceRoots>
           <root url="file://$MODULE_DIR$/../../Gradle4Web/src/main/java" />
