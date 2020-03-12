@@ -103,7 +103,7 @@ public class UTPersonDataProcess1 {
 
     @Test
     public void testGroupByLastName() {
-        Map<String, List<Person>> gs = PersonDataProcess1.groupByGender(persons);
+        Map<String, List<Person>> gs = PersonDataProcess1.groupByLastName(persons);
         assertEquals("姓分组", 4, gs.size());
         for (Map.Entry<String, List<Person>> e : gs.entrySet()) {
             boolean allMatch = e.getValue().stream().allMatch(p -> p.getGender().startsWith(e.getKey()));
