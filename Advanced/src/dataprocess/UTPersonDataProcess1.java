@@ -106,7 +106,7 @@ public class UTPersonDataProcess1 {
         Map<String, List<Person>> gs = PersonDataProcess1.groupByLastName(persons);
         assertEquals("姓分组", 4, gs.size());
         for (Map.Entry<String, List<Person>> e : gs.entrySet()) {
-            boolean allMatch = e.getValue().stream().allMatch(p -> p.getGender().startsWith(e.getKey()));
+            boolean allMatch = e.getValue().stream().allMatch(p -> p.getName().startsWith(e.getKey()));
             assertTrue("都姓" + e.getKey(), allMatch);
         }
     }
