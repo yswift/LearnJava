@@ -83,7 +83,7 @@ public class UTPersonDataProcess1 {
 
     @Test
     public void testSortByAge() {
-        PersonDataProcess1.sortByHight(persons);
+        PersonDataProcess1.sortByAge(persons);
         int h = persons[0].getAge();
         for (Person p : persons) {
             String tip = "年龄排序：" + h + "<=" + p.getAge();
