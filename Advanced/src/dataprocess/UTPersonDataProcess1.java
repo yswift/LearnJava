@@ -87,7 +87,7 @@ public class UTPersonDataProcess1 {
         int h = persons[0].getAge();
         for (Person p : persons) {
             String tip = "年龄排序：" + h + "<=" + p.getAge();
-            assertTrue(tip, h <= p.getAge());
+            assertTrue(tip, h >= p.getAge());
         }
     }
 
