@@ -7,7 +7,7 @@ public class TxtFile {
 	public static final String UTF32 = getFullName("UTF32.TXT");
 	
 	// 获取用于测试的txt文件的完整文件名.
-	static String getFullName(String fn) {
+	public static String getFullName(String fn) {
 		return System.getProperty("user.dir") + "\\bin\\io\\txtfile\\" + fn;
 	}
 
