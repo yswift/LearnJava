@@ -27,7 +27,14 @@ public class WordCount {
      */
     public List<Tuple> count(String fn) {
         List<Tuple> words = new ArrayList<>();
-
+        // 提示：
+        // 1. 每次读取一行数据到String中，使用BufferedReader中的readLine方法
+        // 2. 把读取到的一行String分割成String数组，使用String类的split方法，
+        // 3. 建立 HashMap<String, Tuple> 用于单词统计，key 单词， Tuple 单词，数量
+        // 4. 遍历String数组，使用HashMap<String, Tuple>存储各个单词及数量
+        // 5. HashMap<String, Tuple> 变换成 ArrayList<Tuple>
+        // 6. 使用 Collections.sort 方法完成排序，提供排序用的Comparator<>
+        // api 参考: http://www.matools.com/api/java8
         return words;
     }
 }

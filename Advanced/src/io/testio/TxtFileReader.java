@@ -13,8 +13,11 @@ public class TxtFileReader {
         // TODO 实现这个方法
         // 方法目标: 从不同的字符集编码文本文件中读取内容，并返回
         // fn: 要读取的文件名
-        // encoding 字符集编码
-         return "";
+        // charset 字符集编码
+
+        // 提示，使用FileReader从文件读取字符
+        
+        return "";
     }
 
 }
