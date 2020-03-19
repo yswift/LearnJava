@@ -26,8 +26,8 @@
     </facet>
   </component>
   <component name="NewModuleRootManager">
-    <output url="file://$MODULE_DIR$/../../SpringBoot/build/classes/java/main" />
-    <output-test url="file://$MODULE_DIR$/../../SpringBoot/build/classes/java/test" />
+    <output url="file://$MODULE_DIR$/../../SpringBoot/out/production/classes" />
+    <output-test url="file://$MODULE_DIR$/../../SpringBoot/out/test/classes" />
     <exclude-output />
     <content url="file://$MODULE_DIR$/../../SpringBoot">
       <sourceFolder url="file://$MODULE_DIR$/../../SpringBoot/src/main/java" isTestSource="false" />
@@ -74,8 +74,8 @@
     <orderEntry type="library" name="Gradle: org.hibernate.validator:hibernate-validator:6.0.16.Final" level="project" />
     <orderEntry type="library" name="Gradle: org.springframework:spring-web:5.1.6.RELEASE" level="project" />
     <orderEntry type="library" name="Gradle: com.zaxxer:HikariCP:3.2.0" level="project" />
-    <orderEntry type="library" name="Gradle: org.thymeleaf:thymeleaf:3.0.11.RELEASE" level="project" />
     <orderEntry type="library" name="Gradle: org.springframework.data:spring-data-commons:2.1.6.RELEASE" level="project" />
+    <orderEntry type="library" name="Gradle: org.thymeleaf:thymeleaf:3.0.11.RELEASE" level="project" />
     <orderEntry type="library" name="Gradle: org.springframework.boot:spring-boot-starter-logging:2.1.4.RELEASE" level="project" />
     <orderEntry type="library" name="Gradle: ch.qos.logback:logback-classic:1.2.3" level="project" />
     <orderEntry type="library" name="Gradle: org.apache.logging.log4j:log4j-to-slf4j:2.11.2" level="project" />

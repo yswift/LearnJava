@@ -2,13 +2,14 @@
 <module external.linked.project.id="Gradle4Java" external.linked.project.path="$MODULE_DIR$/../../Gradle4Java" external.root.project.path="$MODULE_DIR$/../../Gradle4Java" external.system.id="GRADLE" external.system.module.group="" external.system.module.version="1.0-SNAPSHOT" type="JAVA_MODULE" version="4">
   <component name="ExternalSystem" externalSystem="GRADLE" externalSystemModuleGroup="" externalSystemModuleVersion="1.0-SNAPSHOT" linkedProjectId="Gradle4Java" linkedProjectPath="$MODULE_DIR$/../../Gradle4Java" rootProjectPath="$MODULE_DIR$/../../Gradle4Java" />
   <component name="NewModuleRootManager">
-    <output url="file://$MODULE_DIR$/../../Gradle4Java/build/classes/java/main" />
-    <output-test url="file://$MODULE_DIR$/../../Gradle4Java/build/classes/java/test" />
+    <output url="file://$MODULE_DIR$/../../Gradle4Java/out/production/classes" />
+    <output-test url="file://$MODULE_DIR$/../../Gradle4Java/out/test/classes" />
     <exclude-output />
     <content url="file://$MODULE_DIR$/../../Gradle4Java">
       <sourceFolder url="file://$MODULE_DIR$/../../Gradle4Java/src/main/java" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../Gradle4Java/src/test/java" isTestSource="true" />
-      <sourceFolder url="file://$MODULE_DIR$/../../Gradle4Java/build/generated/sources/annotationProcessor/java/main" isTestSource="false" generated="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../../Gradle4Java/generated" isTestSource="false" generated="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../../Gradle4Java/generated_tests" isTestSource="true" generated="true" />
       <excludeFolder url="file://$MODULE_DIR$/../../Gradle4Java/.gradle" />
       <excludeFolder url="file://$MODULE_DIR$/../../Gradle4Java/build" />
       <excludeFolder url="file://$MODULE_DIR$/../../Gradle4Java/out" />

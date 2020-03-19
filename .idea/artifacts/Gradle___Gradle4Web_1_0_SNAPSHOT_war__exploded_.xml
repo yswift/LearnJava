@@ -14,7 +14,7 @@
       <element id="directory" name="WEB-INF">
         <element id="directory" name="classes">
           <element id="module-output" name="Gradle4Web" />
-          <element id="dir-copy" path="$PROJECT_DIR$/Gradle4Web/build/resources/main" />
+          <element id="dir-copy" path="$PROJECT_DIR$/Gradle4Web/out/production/resources" />
         </element>
       </element>
     </root>
