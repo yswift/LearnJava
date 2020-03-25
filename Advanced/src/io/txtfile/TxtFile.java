@@ -8,7 +8,7 @@ public class TxtFile {
 	
 	// 获取用于测试的txt文件的完整文件名.
 	public static String getFullName(String fn) {
-		return System.getProperty("user.dir") + "\\Advanced\\src\\io\\txtfile\\" + fn;
+		return System.getProperty("user.dir") + "\\src\\io\\txtfile\\" + fn;
 	}
 
 }
