@@ -118,5 +118,15 @@
         <SOURCES />
       </library>
     </orderEntry>
+    <orderEntry type="module-library" exported="">
+      <library>
+        <CLASSES>
+          <root url="file://$MODULE_DIR$/../JavaLibs/lib/jaxb" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+        <jarDirectory url="file://$MODULE_DIR$/../JavaLibs/lib/jaxb" recursive="false" />
+      </library>
+    </orderEntry>
   </component>
 </module>
