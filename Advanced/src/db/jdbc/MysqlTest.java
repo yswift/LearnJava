@@ -7,7 +7,7 @@ public class MysqlTest {
         DbHelper dbHelper = new DbHelper();
         Connection conn = dbHelper.getMysqlConnection();
         Statement stmt = conn.createStatement();
-        ResultSet rs = stmt.executeQuery("select * from Products");
+        ResultSet rs = stmt.executeQuery("select * from College");
         //执行查询
         while (rs.next()) {
             //遍历查询结果

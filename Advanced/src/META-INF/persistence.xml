@@ -21,6 +21,8 @@
 
 			<property name="javax.persistence.jdbc.driver"
 					  value="com.mysql.jdbc.Driver" />
+<!--			<property name="javax.persistence.jdbc.url"-->
+<!--					  value="jdbc:mysql://localhost:3306/LearnJava?serverTimezone=GMT%2B8&amp;characterEncoding=UTF-8" />-->
 			<property name="javax.persistence.jdbc.url"
 					  value="jdbc:mysql://10.10.50.54:3306/LearnJava?serverTimezone=GMT%2B8&amp;characterEncoding=UTF-8" />
 			<property name="javax.persistence.jdbc.user"
