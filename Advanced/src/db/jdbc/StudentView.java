@@ -127,7 +127,7 @@ public class StudentView extends JFrame {
 	void find() {
 		String no = txtNo.getText().trim();
 		StudentDAO sd  = new StudentDAO();
-		Student s = sd.findByNo(no);
+		Student s = sd.findByNo2(no);
 		System.out.println(s);
 		lblNo.setText(s.getNo());
 		lblName.setText(s.getName());
