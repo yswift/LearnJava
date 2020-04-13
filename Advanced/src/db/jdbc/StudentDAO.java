@@ -1,23 +1,16 @@
 package db.jdbc;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.sql.Date;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
+import db.h2.H2DbHelper;
 
-import javax.sql.rowset.serial.SerialBlob;
+import java.sql.*;
 
 public class StudentDAO {
-	DbHelper dbHelper = new DbHelper();
+	H2DbHelper dbHelper = new H2DbHelper();
 
 	public Student findByNo(String no) {
 		// TODO 不要这样拼接sql
 		String sql = "select * from Student where no='" + no + "'";
-		try (Statement stmt = dbHelper.getMysqlConnection().createStatement(); ResultSet rs = stmt.executeQuery(sql);) {
+		try (Statement stmt = dbHelper.getConnection().createStatement(); ResultSet rs = stmt.executeQuery(sql);) {
 			if (!rs.next()) {
 				return null;
 			}
@@ -46,7 +39,7 @@ public class StudentDAO {
 
 	public Student findByNo2(String no) {
 		String sql = "select * from Student where no=?";
-		try (PreparedStatement pstmt = dbHelper.getMysqlConnection().prepareStatement(sql)) {
+		try (PreparedStatement pstmt = dbHelper.getConnection().prepareStatement(sql)) {
 			// 设置参数
 			pstmt.setString(1, no);
 			// 执行查询

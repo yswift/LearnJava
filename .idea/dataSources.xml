@@ -2,6 +2,7 @@
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
     <data-source source="LOCAL" name="jdbc:mysql://localhost:3306/LearnJava?serverTimezone=GMT%2B8&amp;characterEncoding=UTF-8" uuid="1d3cace5-f7dd-4127-a388-20025733ba4b">
+      <driver-ref>mysql.8</driver-ref>
       <synchronize>true</synchronize>
       <configured-by-url>true</configured-by-url>
       <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
@@ -16,6 +17,7 @@
       </driver-properties>
     </data-source>
     <data-source source="LOCAL" name="mysql://10.10.50.54" uuid="125ec5a2-08a9-4dcb-a502-77f880b12b20">
+      <driver-ref>mysql.8</driver-ref>
       <synchronize>true</synchronize>
       <configured-by-url>true</configured-by-url>
       <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
@@ -28,6 +30,12 @@
         <property name="characterSetResults" value="utf8" />
         <property name="yearIsDateType" value="false" />
       </driver-properties>
+    </data-source>
+    <data-source source="LOCAL" name="H2 - h2demo" uuid="9aba20b7-9a34-4afa-8f67-92db2ea9a423">
+      <driver-ref>h2.unified</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.h2.Driver</jdbc-driver>
+      <jdbc-url>jdbc:h2:~/h2/h2demo;AUTO_SERVER=TRUE</jdbc-url>
     </data-source>
   </component>
 </project>

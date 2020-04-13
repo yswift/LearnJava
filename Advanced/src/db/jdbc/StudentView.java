@@ -1,26 +1,12 @@
 package db.jdbc;
 
-import java.awt.BorderLayout;
-import java.awt.EventQueue;
-
-import javax.swing.JFrame;
-import javax.swing.JPanel;
-import javax.swing.border.EmptyBorder;
-import javax.swing.JLabel;
-import javax.swing.JTextField;
 import javax.imageio.ImageIO;
-import javax.swing.ImageIcon;
-import javax.swing.JButton;
-import java.awt.Dimension;
-import java.awt.GridLayout;
-import java.awt.Image;
-import java.awt.event.ActionListener;
-import java.io.IOException;
-import java.sql.Blob;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
+import javax.swing.*;
+import javax.swing.border.EmptyBorder;
+import java.awt.*;
 import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.sql.Blob;
 
 public class StudentView extends JFrame {
 
@@ -128,6 +114,10 @@ public class StudentView extends JFrame {
 		String no = txtNo.getText().trim();
 		StudentDAO sd  = new StudentDAO();
 		Student s = sd.findByNo2(no);
+		if (s == null) {
+			JOptionPane.showMessageDialog(null, "未找到学生", "未找到", JOptionPane.INFORMATION_MESSAGE);
+			return;
+		}
 		System.out.println(s);
 		lblNo.setText(s.getNo());
 		lblName.setText(s.getName());

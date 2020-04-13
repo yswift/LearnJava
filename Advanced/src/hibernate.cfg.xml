@@ -11,12 +11,18 @@
 		<!--<property name="hibernate.connection.username">LearnJava</property>-->
 		<!--<property name="hibernate.connection.password">LearnJavaPwd</property>-->
 		<!--<property name="hibernate.dialect">org.hibernate.dialect.SQLServerDialect</property>-->
-		<property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+<!--		<property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>-->
 <!--		<property name="hibernate.connection.url">jdbc:mysql://10.10.50.54:3306/LearnJava?serverTimezone=GMT%2B8&amp;characterEncoding=UTF-8</property>-->
-		<property name="hibernate.connection.url">jdbc:mysql://localhost:3306/LearnJava?serverTimezone=GMT%2B8&amp;characterEncoding=UTF-8</property>
-		<property name="hibernate.connection.username">learnjavauser</property>
-		<property name="hibernate.connection.password">learnjavapwd</property>
-		<property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+<!--		<property name="hibernate.connection.url">jdbc:mysql://localhost:3306/LearnJava?serverTimezone=GMT%2B8&amp;characterEncoding=UTF-8</property>-->
+<!--		<property name="hibernate.connection.username">learnjavauser</property>-->
+<!--		<property name="hibernate.connection.password">learnjavapwd</property>-->
+<!--		<property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>-->
+
+		<property name="hibernate.connection.driver_class">org.h2.Driver</property>
+		<property name="hibernate.connection.url">jdbc:h2:~/h2/h2demo;AUTO_SERVER=TRUE</property>
+		<property name="hibernate.connection.username">sa</property>
+		<property name="hibernate.connection.password"></property>
+		<property name="hibernate.dialect">org.hibernate.dialect.H2Dialect</property>
 		
 		<!-- 2. 其他相关配置 -->
         <!-- 2.1 显示hibernate在运行时候执行的sql语句 -->

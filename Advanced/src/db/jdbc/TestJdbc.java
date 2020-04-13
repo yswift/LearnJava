@@ -1,11 +1,8 @@
 package db.jdbc;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
+import db.h2.H2DbHelper;
+
+import java.sql.*;
 
 public class TestJdbc {
 	static String[] CollegeIds = { "01", "02", "03" };
@@ -66,8 +63,8 @@ public class TestJdbc {
 
 	public static void main(String[] args) throws SQLException {
 		TestJdbc test = new TestJdbc();
-		DbHelper helper = new DbHelper();
-		try (Connection connection = helper.getMysqlConnection()) {
+		H2DbHelper helper = new H2DbHelper();
+		try (Connection connection = helper.getConnection()) {
 			test.connection = connection;
 			test.deleteAll();
 			

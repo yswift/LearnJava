@@ -1,18 +1,14 @@
 package db.jdbc;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
-
 public class DbHelper {
 //	public static final String connectionUrl = "jdbc:sqlserver://localhost:1433;databaseName=LearnJava;user=LearnJava;password=LearnJavaPwd";
-	public static final String connectionUrl = "jdbc:sqlserver://10.2.7.39:1433;databaseName=LearnJava;user=LearnJava;password=LearnJavaPwd";
+//	public static final String connectionUrl = "jdbc:sqlserver://10.2.7.39:1433;databaseName=LearnJava;user=LearnJava;password=LearnJavaPwd";
 //	public static final String mySqlConUrl = "jdbc:mysql://10.10.50.54:3306/LearnJava?serverTimezone=UTC";
-	public static final String mySqlConUrl = "jdbc:mysql://localhost:3306/LearnJava?serverTimezone=GMT%2B8&characterEncoding=UTF-8";
+//	public static final String mySqlConUrl = "jdbc:mysql://localhost:3306/LearnJava?serverTimezone=GMT%2B8&characterEncoding=UTF-8";
 //    public static final String mySqlConUrl = "jdbc:mysql://10.10.50.54:3306/LearnJava?serverTimezone=GMT%2B8&characterEncoding=UTF-8";
 
 //	Connection connection;
-	Connection mySqlCon;
+//	Connection mySqlCon;
 	
 //	public void connect() throws SQLException {
 //		if (connection == null || connection.isClosed()) {
@@ -35,16 +31,16 @@ public class DbHelper {
 //		return connection;
 //	}
 
-	public Connection getMysqlConnection() throws SQLException {
-		if (mySqlCon == null || mySqlCon.isClosed()) {
-			try {
-				Class.forName("com.mysql.jdbc.Driver");
-			} catch (ClassNotFoundException e) {
-				e.printStackTrace();
-			}
-			mySqlCon = DriverManager.getConnection(mySqlConUrl, "learnjavauser", "learnjavapwd");
-		}
-		return mySqlCon;
-	}
+//	public Connection getMysqlConnection() throws SQLException {
+//		if (mySqlCon == null || mySqlCon.isClosed()) {
+//			try {
+//				Class.forName("com.mysql.jdbc.Driver");
+//			} catch (ClassNotFoundException e) {
+//				e.printStackTrace();
+//			}
+//			mySqlCon = DriverManager.getConnection(mySqlConUrl, "learnjavauser", "learnjavapwd");
+//		}
+//		return mySqlCon;
+//	}
 
 }

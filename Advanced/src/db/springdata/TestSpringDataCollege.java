@@ -1,18 +1,13 @@
 package db.springdata;
 
-import java.util.List;
-import java.util.Optional;
-
-import javax.persistence.EntityManager;
-import javax.persistence.EntityTransaction;
-
+import db.model.College;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.stereotype.Component;
 
-import db.model.College;
+import java.util.List;
+import java.util.Optional;
 
 @Component
 public class TestSpringDataCollege {
@@ -67,7 +62,7 @@ public class TestSpringDataCollege {
     }
 
     public static void main(String[] args) {
-        ApplicationContext ctx = new AnnotationConfigApplicationContext(AppConfig4Mysql.class);
+        ApplicationContext ctx = new AnnotationConfigApplicationContext(AppConfig4H2.class);
         TestSpringDataCollege t = ctx.getBean(TestSpringDataCollege.class);
 
         t.deleteAll();
