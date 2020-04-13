@@ -9,7 +9,7 @@
         </element>
         <element id="directory" name="lib">
           <element id="file-copy" path="$PROJECT_DIR$/JavaLibs/lib/gson-2.8.5.jar" />
-          <element id="file-copy" path="$PROJECT_DIR$/JavaLibs/lib/jdbc/mysql-connector-java-8.0.15.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/JavaLibs/lib/jdbc/h2-1.4.200.jar" />
         </element>
       </element>
     </root>

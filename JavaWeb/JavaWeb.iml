@@ -38,13 +38,14 @@
         <SOURCES />
       </library>
     </orderEntry>
-    <orderEntry type="module-library" exported="" scope="RUNTIME">
+    <orderEntry type="module-library" scope="RUNTIME">
       <library>
         <CLASSES>
-          <root url="jar://$MODULE_DIR$/../JavaLibs/lib/jdbc/mysql-connector-java-8.0.15.jar!/" />
+          <root url="file://$MODULE_DIR$/../JavaLibs/lib/jdbc" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
+        <jarDirectory url="file://$MODULE_DIR$/../JavaLibs/lib/jdbc" recursive="false" />
       </library>
     </orderEntry>
   </component>

@@ -24,10 +24,11 @@ public class SessionTrack extends HttpServlet {
 
         String title = "欢迎回到我的网站";
         Integer visitCount = 0;
-        String visitCountKey = new String("visitCount");
-        String userIDKey = new String("userID");
-        String userID = new String("ABCD");
+        String visitCountKey = "visitCount";
+        String userIDKey = "userID";
+        String userID = "ABCD";
 
+        session.setAttribute(visitCountKey, visitCount);
         // 检查网页上是否有新的访问者
         if (session.isNew()) {
             title = "欢迎来到我的网站";

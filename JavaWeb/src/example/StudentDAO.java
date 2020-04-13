@@ -5,12 +5,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class StudentDAO {
-	DbHelper dbHelper = new DbHelper();
+	H2DbHelper dbHelper = new H2DbHelper();
 
 	public List<Student> listAll() throws SQLException {
 		List<Student> list = new ArrayList<>();
 		String sql = "select * from Student";
-		try (Statement pstmt = dbHelper.getMysqlConnection().createStatement() ) {
+		try (Statement pstmt = dbHelper.getConnection().createStatement() ) {
 			ResultSet rs = pstmt.executeQuery(sql);
 			while (rs.next()) {
 				Student s = createStudent(rs);
@@ -35,7 +35,7 @@ public class StudentDAO {
 
 	public Student findByNo(String no) throws SQLException {
 		String sql = "select * from Student where no=?";
-		try (PreparedStatement pstmt = dbHelper.getMysqlConnection().prepareStatement(sql) ) {
+		try (PreparedStatement pstmt = dbHelper.getConnection().prepareStatement(sql) ) {
 			pstmt.setString(1, no);
 			ResultSet rs = pstmt.executeQuery();
 			if (!rs.next()) {
@@ -52,7 +52,7 @@ public class StudentDAO {
 
 	public Student findById(int id) throws SQLException {
 		String sql = "select * from Student where id=?";
-		try (PreparedStatement pstmt = dbHelper.getMysqlConnection().prepareStatement(sql) ) {
+		try (PreparedStatement pstmt = dbHelper.getConnection().prepareStatement(sql) ) {
 			pstmt.setInt(1, id);
 			ResultSet rs = pstmt.executeQuery();
 			if (!rs.next()) {
@@ -64,7 +64,7 @@ public class StudentDAO {
 
 	public void save(Student s) throws SQLException {
 		String sql = "insert into Student(No, Name, Age, Birthday, photo) values(?,?,?,?,?)";
-		try (PreparedStatement pstmt = dbHelper.getMysqlConnection().prepareStatement(sql) ) {
+		try (PreparedStatement pstmt = dbHelper.getConnection().prepareStatement(sql) ) {
 			pstmt.setString(1, s.getNo());
 			pstmt.setString(2, s.getName());
 			pstmt.setInt(3, s.getAge());
@@ -76,7 +76,7 @@ public class StudentDAO {
 
 	public void update(Student s) throws SQLException {
 		String sql = "update Student set No=?, Name=?, Age=?, Birthday=?, photo=? where id=?";
-		try (PreparedStatement pstmt = dbHelper.getMysqlConnection().prepareStatement(sql)) {
+		try (PreparedStatement pstmt = dbHelper.getConnection().prepareStatement(sql)) {
 			pstmt.setString(1, s.getNo());
 			pstmt.setString(2, s.getName());
 			pstmt.setInt(3, s.getAge());
@@ -94,7 +94,7 @@ public class StudentDAO {
 
 	public void delete(int id) throws SQLException {
 		String sql = "delete from Student where id=?";
-		try (PreparedStatement pstmt = dbHelper.getMysqlConnection().prepareStatement(sql) ) {
+		try (PreparedStatement pstmt = dbHelper.getConnection().prepareStatement(sql) ) {
 			pstmt.setInt(1, id);
 			pstmt.execute();
 		}
