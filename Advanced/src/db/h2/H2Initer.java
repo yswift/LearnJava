@@ -24,7 +24,7 @@ public class H2Initer {
     public void test() throws SQLException {
         H2DbHelper helper = new H2DbHelper();
         try (Connection conn = helper.getConnection()) {
-            String sql = "select * from college";
+            String sql = "select * from College";
             Statement stmt = conn.createStatement();
             ResultSet rs = stmt.executeQuery(sql);
             while (rs.next()) {

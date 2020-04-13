@@ -2,11 +2,10 @@ package demo.model;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import javax.persistence.Table;
 import java.sql.Date;
 
 @Entity
-@Table(name="\"Student\"")
+//@Table(name="\"Student\"")
 public class Student {
     @Id
     private int id;

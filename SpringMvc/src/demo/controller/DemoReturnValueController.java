@@ -21,7 +21,7 @@ public class DemoReturnValueController {
     public ResponseEntity<College> getImageAsResponseEntity() {
         HttpHeaders headers = new HttpHeaders();
         headers.setContentType(MediaType.APPLICATION_JSON);
-        College c = new College("01", "计算机科学与技术");
+        College c = new College("02", "网络安全");
         ResponseEntity<College> responseEntity = new ResponseEntity<>(c, headers, HttpStatus.OK);
         return responseEntity;
     }
