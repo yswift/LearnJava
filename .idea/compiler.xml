@@ -4,5 +4,10 @@
     <annotationProcessing>
       <profile default="true" name="Default" enabled="true" />
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="cn.edu.uoh.cs.springbootdemo" target="11" />
+      <module name="Gradle4Java" target="11" />
+      <module name="Gradle4Web" target="11" />
+    </bytecodeTargetLevel>
   </component>
 </project>
