@@ -17,7 +17,7 @@ create table Student
     Photo blob null
 );
 
-insert into Student values(null, '123', '张三', 10, '2001-01-02', null);
+insert into Student values(null, '201187654321', '憨豆', 67, '1955-01-06', null);
 
 
 

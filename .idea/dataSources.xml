@@ -31,7 +31,7 @@
         <property name="yearIsDateType" value="false" />
       </driver-properties>
     </data-source>
-    <data-source source="LOCAL" name="H2 - h2demo" uuid="9aba20b7-9a34-4afa-8f67-92db2ea9a423">
+    <data-source source="LOCAL" name="h2demo" uuid="8947b938-6d8a-4fee-8cfe-1bb3af9c44b0">
       <driver-ref>h2.unified</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>org.h2.Driver</jdbc-driver>

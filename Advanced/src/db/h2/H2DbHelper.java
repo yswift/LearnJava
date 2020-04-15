@@ -3,6 +3,7 @@ package db.h2;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+import java.util.TimeZone;
 
 public class H2DbHelper {
     public static final String H2_DRIVER = "org.h2.Driver";
@@ -17,6 +18,8 @@ public class H2DbHelper {
             } catch (ClassNotFoundException e) {
                 e.printStackTrace();
             }
+            // 设置默认时区
+            TimeZone.setDefault(TimeZone.getTimeZone("UTC+8"));
             connection = DriverManager.getConnection(JDBC_URL, "sa", "");
         }
         return connection;
