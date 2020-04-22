@@ -11,6 +11,18 @@ public class Student {
 	private Date birthday;
 	private Blob photo;
 
+	public Student() {
+
+	}
+
+	public Student(int id, String no, String name, int age, Date birthday) {
+		this.id = id;
+		this.no = no;
+		this.name = name;
+		this.age = age;
+		this.birthday = birthday;
+	}
+
 	public int getId() {
 		return id;
 	}
