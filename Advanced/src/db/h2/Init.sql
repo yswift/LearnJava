@@ -1,15 +1,11 @@
-drop table College;
-create table College
-(
+create table IF NOT EXISTS College(
     Id varchar(10) not null,
     Name varchar(50) not null,
     constraint College_pk
         primary key (Id)
 );
-insert into College values('00', '测试');
 
-drop table Student;
-create table Student
+create table IF NOT EXISTS Student
 (
     Id int auto_increment
         primary key,

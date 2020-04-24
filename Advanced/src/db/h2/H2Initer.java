@@ -6,10 +6,7 @@ import java.io.BufferedInputStream;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
 
 // 数据库表初始化工具
 public class H2Initer {
@@ -24,6 +21,8 @@ public class H2Initer {
     public void test() throws SQLException {
         H2DbHelper helper = new H2DbHelper();
         try (Connection conn = helper.getConnection()) {
+            PreparedStatement pstmt = conn.prepareStatement("insert into College values('00','Test')");
+            pstmt.executeUpdate();
             String sql = "select * from College";
             Statement stmt = conn.createStatement();
             ResultSet rs = stmt.executeQuery(sql);
