@@ -1,3 +1,4 @@
+drop table College;
 create table College
 (
     Id varchar(10) not null,
@@ -5,7 +6,9 @@ create table College
     constraint College_pk
         primary key (Id)
 );
+insert into College values('00', '测试');
 
+drop table Student;
 create table Student
 (
     Id int auto_increment
