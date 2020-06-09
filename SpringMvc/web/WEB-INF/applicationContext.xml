@@ -15,6 +15,7 @@
 
     <!--静态资源映射-->
     <mvc:resources mapping="/static/**" location="/static/" />
+    <mvc:resources mapping="/html/**" location="/html/" />
 
     <!-- 对demo包中的所有类进行扫描，以完成Bean创建和自动依赖注入的功能 -->
     <context:component-scan base-package="demo" />
